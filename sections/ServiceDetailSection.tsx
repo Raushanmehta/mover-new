@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -101,22 +101,11 @@ export default function ServiceDetailSection({
     const list = propList || fallbackList;
     const sidebar = propSidebar || (site.services.detailSidebar as unknown as ServiceDetailSidebarData);
 
-    const initialService =
+    const activeService: ServiceDetailItem =
         propService ||
         list.find((s) => (s.slug || s.id) === currentSlug) ||
         list.find((s) => (s.slug || s.id) === "bleaching") ||
         list[0];
-
-    const [activeService, setActiveService] = useState<ServiceDetailItem>(initialService);
-
-    useEffect(() => {
-        if (propService) {
-            setActiveService(propService);
-        } else if (currentSlug) {
-            const found = list.find((s) => (s.slug || s.id) === currentSlug);
-            if (found) setActiveService(found);
-        }
-    }, [propService, currentSlug, list]);
 
     const activeSlug = activeService.slug || activeService.id;
     const detailedDescriptions = activeService.detailedDescription || [activeService.description];
@@ -135,8 +124,7 @@ export default function ServiceDetailSection({
     return (
         <section className="w-full bg-[#FAF9F6] py-8 lg:py-14 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
-
-                {/* Left Column: Sidebar Widgets (4 Cols) */}
+                {/* Sidebar column */}
                 <motion.div
                     variants={fadeInLeft}
                     initial="hidden"
@@ -144,7 +132,7 @@ export default function ServiceDetailSection({
                     viewport={defaultViewport}
                     className="lg:col-span-4 flex flex-col gap-4"
                 >
-                    {/* Widget 1: Our Services Nav Menu */}
+                    {/* Services menu */}
                     <motion.div
                         variants={fadeInUp}
                         className="bg-[#0B0C10] p-4 text-white shadow-md border border-gray-900 space-y-4"
@@ -166,7 +154,6 @@ export default function ServiceDetailSection({
                                     <li key={service.id || index}>
                                         <Link
                                             href={targetHref}
-                                            onClick={() => setActiveService(service)}
                                             className="block"
                                         >
                                             <motion.div
@@ -187,7 +174,7 @@ export default function ServiceDetailSection({
                         </ul>
                     </motion.div>
 
-                    {/* Widget 2: Need Assistance Card */}
+                    {/* Assistance card */}
                     {sidebar?.assistance && (
                         <motion.div
                             variants={fadeInUp}
@@ -229,13 +216,12 @@ export default function ServiceDetailSection({
                         </motion.div>
                     )}
 
-                    {/* Widget 3: Special Offer Card */}
+                    {/* Special offer */}
                     {sidebar?.specialOffer && (
                         <motion.div
                             variants={fadeInUp}
                             className="relative bg-[#0B0C10] p-6 text-white shadow-md border border-gray-900 overflow-hidden min-h-[240px] flex flex-col justify-between space-y-4"
                         >
-                            {/* Background Model Artwork Overlay */}
                             <Image
                                 src={sidebar.specialOffer.image}
                                 alt={sidebar.specialOffer.title}
@@ -272,10 +258,9 @@ export default function ServiceDetailSection({
                             </div>
                         </motion.div>
                     )}
-
                 </motion.div>
 
-                {/* Right Column: Detailed Service View (8 Cols) */}
+                {/* Detail column */}
                 <motion.div
                     variants={fadeInRight}
                     initial="hidden"
@@ -283,7 +268,7 @@ export default function ServiceDetailSection({
                     viewport={defaultViewport}
                     className="lg:col-span-8 flex flex-col gap-6"
                 >
-                    {/* Main Service Banner Image */}
+                    {/* Banner image */}
                     <motion.div
                         variants={imageScaleIn}
                         className="relative w-full h-[300px] sm:h-[400px] overflow-hidden shadow-md bg-gray-200 group"
@@ -297,7 +282,7 @@ export default function ServiceDetailSection({
                         />
                     </motion.div>
 
-                    {/* Title & Description */}
+                    {/* Headline and text */}
                     <div className="space-y-4">
                         <motion.div variants={subtitleVariants} className="flex items-center gap-2 text-[#D89B33]">
                             <span className="text-sm font-bold uppercase tracking-[0.2em]">
@@ -320,7 +305,7 @@ export default function ServiceDetailSection({
                         </motion.div>
                     </div>
 
-                    {/* 4-Column Feature Highlights Bar */}
+                    {/* Features bar */}
                     {features.length > 0 && (
                         <motion.div
                             variants={staggerContainer(0.08)}
@@ -351,7 +336,7 @@ export default function ServiceDetailSection({
                         </motion.div>
                     )}
 
-                    {/* How It Works Section */}
+                    {/* Process section */}
                     {howItWorks && (
                         <motion.div
                             variants={fadeInUp}
@@ -383,7 +368,7 @@ export default function ServiceDetailSection({
                         </motion.div>
                     )}
 
-                    {/* Key Benefits Section */}
+                    {/* Key benefits */}
                     {keyBenefits && (
                         <motion.div
                             variants={fadeInUp}
@@ -426,9 +411,7 @@ export default function ServiceDetailSection({
                             </motion.div>
                         </motion.div>
                     )}
-
                 </motion.div>
-
             </div>
         </section>
     );

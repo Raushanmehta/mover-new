@@ -194,7 +194,7 @@
                         ],
                         "ctaButton": {
                             "text": "Get a Quote",
-                            "href": "/quote"
+                            "href": "/get-a-quote"
                         }
                     }
                 }
@@ -258,7 +258,7 @@
                             },
                             {
                                 "name": "Get A Quote",
-                                "href": "/quote"
+                                "href": "/get-a-quote"
                             }
                         ],
                         "serviceLinks": [
@@ -307,7 +307,7 @@
                             "title": "Get In Touch",
                             "description": "Have a question or want to book an appointment? We're here to help you shine.",
                             "buttonText": "Get a Quote",
-                            "buttonHref": "/quote"
+                            "buttonHref": "/get-a-quote"
                         },
                         "copyright": "© 2026 Haircarft. All Rights Reserved. Powered by Lestow",
                         "legalLinks": [
@@ -342,8 +342,8 @@
                             "Makeup"
                         ],
                         "ctaButton": {
-                            "text": "View More",
-                            "href": "#services"
+                            "text": "Get a Quote",
+                            "href": "/get-a-quote"
                         }
                     }
                 }
@@ -1417,7 +1417,7 @@
                         "description": "Experience professional care, personalized treatments and a relaxing salon environment designed just for you.",
                         "ctaButton": {
                             "text": "Get a Quote",
-                            "href": "/quote"
+                            "href": "/get-a-quote"
                         }
                     }
                 }

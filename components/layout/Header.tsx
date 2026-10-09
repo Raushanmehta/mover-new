@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
-      {/* Topbar: collapses and hides smoothly on scroll */}
+      {/* Topbar */}
       <div
         className={`hidden md:block transition-all duration-300 ease-in-out overflow-hidden ${
           isScrolled
@@ -30,7 +30,7 @@ export default function Header() {
         <Topbar />
       </div>
 
-      {/* Navbar: remains sticky at top */}
+      {/* Navbar */}
       <div className={`transition-shadow duration-300 ${isScrolled ? "shadow-md" : ""}`}>
         <Navbar />
       </div>

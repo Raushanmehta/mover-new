@@ -35,9 +35,9 @@ export default function AboutSection({ data: propData }: AboutSectionProps = {})
 
     return (
         <section className="w-full bg-white py-8 lg:py-14 overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-12 items-start">
 
-                {/* Left Side: Overlapping Image Grid with Gold Frames */}
+                {/* Image showcase */}
                 <motion.div
                     variants={fadeInLeft}
                     initial="hidden"

@@ -16,6 +16,8 @@ import {
     springTransition,
 } from "@/utils/animations";
 
+const MotionLink = motion.create(Link);
+
 export default function Navbar() {
     const data = site.navbar;
     const navItems = data.navItems;
@@ -85,14 +87,14 @@ export default function Navbar() {
                     })}
                 </div>
 
-                {/* CTA Button & Mobile Toggle Container */}
+                {/* Action items */}
                 <div className="flex items-center gap-3 sm:gap-4">
 
                     {/* Vertical Divider */}
                     <span className="hidden lg:block h-6 w-[1px] bg-[#D89B33]/40" />
 
                     {/* CTA Button */}
-                    <motion.a
+                    <MotionLink
                         whileHover={buttonHoverTap.hover}
                         whileTap={buttonHoverTap.tap}
                         href={data.ctaButton.href}
@@ -100,7 +102,7 @@ export default function Navbar() {
                     >
                         <span>{data.ctaButton.text}</span>
                         <HiArrowRight className="text-base transition-transform group-hover:translate-x-1" />
-                    </motion.a>
+                    </MotionLink>
 
                     {/* Mobile Menu Button */}
                     <motion.button
@@ -153,7 +155,7 @@ export default function Navbar() {
 
                         {/* Mobile CTA */}
                         <motion.div variants={mobileItemVariants} className="pt-4 mt-2 border-t border-gray-100">
-                            <motion.a
+                            <MotionLink
                                 whileTap={buttonHoverTap.tap}
                                 href={data.ctaButton.href}
                                 onClick={() => setMobileMenuOpen(false)}
@@ -161,7 +163,7 @@ export default function Navbar() {
                             >
                                 <span>{data.ctaButton.text}</span>
                                 <HiArrowRight className="text-base transition-transform group-hover:translate-x-1" />
-                            </motion.a>
+                            </MotionLink>
                         </motion.div>
                     </motion.div>
                 )}

@@ -78,20 +78,18 @@ export default function BlogDetailSection({
     const formattedDate = post.date || (post.day && post.month ? `${post.day} ${post.month}, ${post.year || 2026}` : "12 Mar, 2026");
 
     return (
-        <section className="w-full bg-[#FAF9F6] py-16 md:py-24 overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-
-                {/* Left Column: Article Detail Content (8 Cols) */}
+        <section className="w-full bg-[#FAF9F6] py-8 lg:py-14 overflow-hidden">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                {/* Main content */}
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="lg:col-span-8 flex flex-col gap-8"
+                    className="lg:col-span-8 flex flex-col gap-4"
                 >
-                    {/* Header & Eyebrow */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 text-[#D89B33]">
-                            <span className="text-xs font-bold uppercase tracking-[0.2em]">
+                            <span className="text-xs lg:text-base font-bold uppercase tracking-[0.2em]">
                                 {post.category || "Beauty Tips"}
                             </span>
                             <span className="w-8 h-[2px] bg-[#D89B33]" />
@@ -115,7 +113,7 @@ export default function BlogDetailSection({
                         </div>
                     </div>
 
-                    {/* Main Article Banner Image */}
+                    {/* Banner image */}
                     <div className="relative w-full h-[320px] sm:h-[440px] overflow-hidden shadow-md bg-gray-200">
                         <Image
                             src={post.bannerImage || post.image}
@@ -126,14 +124,13 @@ export default function BlogDetailSection({
                         />
                     </div>
 
-                    {/* Intro Paragraph */}
                     {(post.intro || post.excerpt) && (
                         <p className="font-sans text-gray-600 text-base sm:text-lg leading-relaxed">
                             {post.intro || post.excerpt}
                         </p>
                     )}
 
-                    {/* Step-by-Step Sections */}
+                    {/* Article sections */}
                     {sections.map((sec, idx) => (
                         <div
                             key={idx}
@@ -158,7 +155,7 @@ export default function BlogDetailSection({
                         </div>
                     ))}
 
-                    {/* Quote Banner Box */}
+                    {/* Quote box */}
                     {post.quote && (
                         <div className="p-6 sm:p-8 bg-[#F7F5F0] border-l-4 border-[#D89B33] border-y border-r border-amber-200/60 flex items-start gap-4 mt-2 shadow-sm">
                             <FaQuoteLeft className="text-[#D89B33] text-3xl shrink-0 mt-1" />
@@ -167,18 +164,16 @@ export default function BlogDetailSection({
                             </p>
                         </div>
                     )}
-
                 </motion.div>
 
-                {/* Right Sidebar Column (4 Cols) */}
+                {/* Sidebar */}
                 <motion.div
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     className="lg:col-span-4 flex flex-col gap-8"
                 >
-
-                    {/* Widget 1: Recent Posts */}
+                    {/* Recent posts */}
                     {recentPosts.length > 0 && (
                         <div className="bg-[#F7F5F0] p-6 border border-gray-200/80 shadow-sm space-y-4">
                             <div>
@@ -223,7 +218,7 @@ export default function BlogDetailSection({
                         </div>
                     )}
 
-                    {/* Widget 2: Book Beauty Session CTA Card */}
+                    {/* Promo card */}
                     {sidebar?.cta && (
                         <div className="relative overflow-hidden min-h-[320px] flex flex-col justify-end text-white shadow-lg bg-gray-950 space-y-4">
                             <Image
@@ -256,7 +251,7 @@ export default function BlogDetailSection({
                         </div>
                     )}
 
-                    {/* Widget 3: Categories List */}
+                    {/* Categories */}
                     {sidebar?.categories && (
                         <div className="bg-[#F7F5F0] p-6 border border-gray-200/80 shadow-sm space-y-4">
                             <div>
@@ -286,9 +281,7 @@ export default function BlogDetailSection({
                             </ul>
                         </div>
                     )}
-
                 </motion.div>
-
             </div>
         </section>
     );

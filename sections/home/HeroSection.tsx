@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi2";
 import site from "@/data/index";
@@ -13,13 +14,14 @@ import {
     staggerContainer,
 } from "@/utils/animations";
 
+const MotionLink = motion.create(Link);
+
 export default function HeroSection() {
     const data = site.hero;
 
     return (
         <section className="relative w-full min-h-[75vh] lg:min-h-[84vh] flex items-center justify-start overflow-hidden bg-white">
-
-            {/* Background Image with Dark & Warm Overlays */}
+            {/* Background image */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src={data.bgImage}
@@ -28,11 +30,11 @@ export default function HeroSection() {
                     priority
                     className="object-cover object-right lg:object-center brightness-[0.95]"
                 />
-                {/* Soft White Gradient for Text Contrast */}
+                {/* Soft overlay */}
                 <div className="absolute inset-y-0 left-0 w-full sm:w-4/5 md:w-3/5 lg:w-[52%] bg-gradient-to-r from-white/95 via-white/75 to-transparent z-10 pointer-events-none" />
             </div>
 
-            {/* Hero Content Area */}
+            {/* Hero content */}
             <div className="relative z-20 w-full max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 py-16 lg:py-24">
                 <motion.div
                     variants={staggerContainer(0.12, 0.1)}
@@ -40,8 +42,7 @@ export default function HeroSection() {
                     animate="visible"
                     className="max-w-2xl flex flex-col items-start gap-4 lg:gap-4"
                 >
-
-                    {/* Cursive Subtitle with Left Accent Line */}
+                    {/* Subtitle */}
                     <motion.div
                         variants={subtitleVariants}
                         className="flex items-center gap-3 text-[#D89B33]"
@@ -52,7 +53,7 @@ export default function HeroSection() {
                         </span>
                     </motion.div>
 
-                    {/* Main Headline */}
+                    {/* Headline */}
                     <motion.h1
                         variants={titleVariants}
                         className="font-bodoni font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-black leading-[1.15]"
@@ -64,7 +65,7 @@ export default function HeroSection() {
                         </span>
                     </motion.h1>
 
-                    {/* Service Categories */}
+                    {/* Service categories */}
                     <motion.div
                         variants={fadeInUp}
                         className="flex items-center gap-2 md:gap-3 text-sm sm:text-base font-tight tracking-wide text-gray-900"
@@ -79,25 +80,23 @@ export default function HeroSection() {
                         ))}
                     </motion.div>
 
-                    {/* Call to Action Button */}
+                    {/* CTA button */}
                     <motion.div
                         variants={fadeInUp}
                         className="pt-2"
                     >
-                        <motion.a
+                        <MotionLink
                             whileHover={buttonHoverTap.hover}
                             whileTap={buttonHoverTap.tap}
                             href={data.ctaButton.href}
-                            className="group flex items-center gap-3 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-7 py-3.5 shadow-xl hover:shadow-[#D89B33]/30 transition-all text-base cursor-pointer"
+                            className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-7 py-3.5 shadow-xl hover:shadow-[#D89B33]/30 transition-all text-base cursor-pointer"
                         >
                             <span>{data.ctaButton.text}</span>
                             <HiArrowRight className="text-xl transition-transform group-hover:translate-x-1.5" />
-                        </motion.a>
+                        </MotionLink>
                     </motion.div>
-
                 </motion.div>
             </div>
-
         </section>
     );
 }

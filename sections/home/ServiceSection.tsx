@@ -48,7 +48,7 @@ interface ServiceSectionProps {
 
 export default function ServiceSection({ data: propData }: ServiceSectionProps = {}) {
     const data = propData || site.services;
-    const servicesData = data.servicesList || (data as any).services;
+    const servicesData = data.servicesList || data.services;
     const [activeTab, setActiveTab] = useState(1);
     const currentService = servicesData?.[activeTab] || servicesData?.[0];
 
@@ -150,12 +150,12 @@ export default function ServiceSection({ data: propData }: ServiceSectionProps =
                         exit={{ opacity: 0, y: -20, transition: { duration: 0.25 } }}
                         className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-start"
                     >
-                        {/* Left Column: Overlapping Media Cards with Gold Decorative Frame */}
+                        {/* Media showcase */}
                         <motion.div
                             variants={fadeInLeft}
                             className="w-full relative flex justify-center lg:justify-start"
                         >
-                            <div className="relative w-full max-w-[540px] lg:max-w-[560px] h-[380px] sm:h-[440px] lg:h-[460px]">
+                            <div className="relative w-full max-w-[540px] sm:max-w-[500px] lg:max-w-[510px] h-[380px] sm:h-[400px] lg:h-[440px]">
 
                                 {/* Gold Frame Accent 1 */}
                                 <div className="absolute top-3 sm:top-4 -left-3 sm:-left-4 w-full h-[88%] border-2 border-[#D89B33]/50 rounded-md z-0" />
@@ -197,7 +197,7 @@ export default function ServiceSection({ data: propData }: ServiceSectionProps =
                             </div>
                         </motion.div>
 
-                        {/* Right Column: Service Details & Checklist */}
+                        {/* Service details */}
                         <motion.div
                             variants={fadeInRight}
                             className="w-full flex flex-col items-start gap-2 pt-1"

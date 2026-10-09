@@ -26,6 +26,8 @@ import {
     defaultViewport,
 } from "@/utils/animations";
 
+const MotionLink = motion.create(Link);
+
 const socialIconMap: Record<string, React.ElementType> = {
     facebook: FaFacebookF,
     instagram: FaInstagram,
@@ -38,8 +40,7 @@ export default function Footer() {
 
     return (
         <footer className="w-full bg-[#0B0C10] text-[#E0E0E0] pt-14 md:pt-16 pb-8 border-t border-[#C58A2B]/30 font-sans relative overflow-hidden">
-
-            {/* Top Main Section with 12-Column Responsive Grid */}
+            {/* Footer content */}
             <motion.div
                 variants={footerContainerVariants}
                 initial="hidden"
@@ -47,14 +48,12 @@ export default function Footer() {
                 viewport={defaultViewport}
                 className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 md:gap-y-10 lg:gap-y-0 pb-12 md:pb-14"
             >
-
-                {/* Column 1: Brand / Logo & About */}
+                {/* Brand column */}
                 <motion.div
                     variants={footerColumnVariants}
                     className="sm:col-span-2 md:col-span-6 lg:col-span-3 flex flex-col justify-between space-y-5 lg:pr-6 xl:pr-8 lg:border-r lg:border-[#C58A2B]/20"
                 >
                     <div className="space-y-4">
-                        {/* Logo */}
                         <Link href="/" className="inline-block">
                             <Image
                                 src={data.logo.src}
@@ -66,13 +65,12 @@ export default function Footer() {
                             />
                         </Link>
 
-                        {/* Description */}
                         <p className="text-xs sm:text-sm leading-relaxed text-gray-300 pr-2">
                             {data.description}
                         </p>
                     </div>
 
-                    {/* Social Icons */}
+                    {/* Social links */}
                     <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
                         {data.socialLinks.map((social, index) => {
                             const IconComponent = socialIconMap[social.platform] || FaInstagram;
@@ -100,7 +98,7 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
-                {/* Column 2: Quick Links */}
+                {/* Quick links */}
                 <motion.div
                     variants={footerColumnVariants}
                     className="sm:col-span-1 md:col-span-3 lg:col-span-2 flex flex-col space-y-4 lg:px-4 xl:px-6 lg:border-r lg:border-[#C58A2B]/20"
@@ -132,7 +130,7 @@ export default function Footer() {
                     </ul>
                 </motion.div>
 
-                {/* Column 3: Our Services */}
+                {/* Services */}
                 <motion.div
                     variants={footerColumnVariants}
                     className="sm:col-span-1 md:col-span-3 lg:col-span-2 flex flex-col space-y-4 lg:px-4 xl:px-6 lg:border-r lg:border-[#C58A2B]/20"
@@ -164,7 +162,7 @@ export default function Footer() {
                     </ul>
                 </motion.div>
 
-                {/* Column 4: Contact Us */}
+                {/* Contact */}
                 <motion.div
                     variants={footerColumnVariants}
                     className="sm:col-span-1 md:col-span-6 lg:col-span-3 flex flex-col space-y-4 lg:px-4 xl:px-6 lg:border-r lg:border-[#C58A2B]/20"
@@ -210,7 +208,7 @@ export default function Footer() {
                             </a>
                         </motion.div>
 
-                        {/* Hours */}
+                        {/* Working hours */}
                         <motion.div variants={footerItemVariants} className="flex items-start gap-3">
                             <div className="w-10 h-10 rounded-full border border-[#C58A2B] flex items-center justify-center text-[#C58A2B] shrink-0 shadow-sm mt-0.5">
                                 <FaRegClock className="w-5 h-5 shrink-0" />
@@ -222,7 +220,7 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
-                {/* Column 5: Get In Touch CTA */}
+                {/* CTA column */}
                 <motion.div
                     variants={footerColumnVariants}
                     className="sm:col-span-1 md:col-span-6 lg:col-span-2 flex flex-col justify-start space-y-4 lg:pl-4 xl:pl-6"
@@ -242,7 +240,7 @@ export default function Footer() {
                     </p>
 
                     <div className="pt-2">
-                        <motion.a
+                        <MotionLink
                             whileHover={buttonHoverTap.hover}
                             whileTap={buttonHoverTap.tap}
                             href={data.cta.buttonHref}
@@ -250,20 +248,17 @@ export default function Footer() {
                         >
                             <span>{data.cta.buttonText}</span>
                             <HiArrowRight className="text-base transition-transform group-hover:translate-x-1" />
-                        </motion.a>
+                        </MotionLink>
                     </div>
                 </motion.div>
-
             </motion.div>
 
-            {/* Bottom Copyright & Legal Links Bar */}
+            {/* Copyright bar */}
             <div className="border-t border-[#C58A2B]/30 pt-6">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-gray-400">
-
-                    {/* Copyright Text */}
                     <p className="text-center sm:text-left">{data.copyright}</p>
 
-                    {/* Legal Links */}
+                    {/* Legal links */}
                     <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
                         {data.legalLinks.map((legal, i) => (
                             <React.Fragment key={legal.name}>
@@ -276,10 +271,8 @@ export default function Footer() {
                             </React.Fragment>
                         ))}
                     </div>
-
                 </div>
             </div>
-
         </footer>
     );
 }

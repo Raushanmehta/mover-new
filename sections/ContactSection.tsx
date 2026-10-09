@@ -189,7 +189,7 @@ export default function ContactSection({ data: propData }: ContactSectionProps =
                         </div>
                     </motion.div>
 
-                    {/* Card 2: Book an Appointment Form */}
+                    {/* Appointment form */}
                     <motion.div
                         variants={cardVariants}
                         className="lg:col-span-5 bg-[#F7F5F0] p-4 sm:p-6 border border-gray-200/60 flex flex-col justify-between"
@@ -327,12 +327,12 @@ export default function ContactSection({ data: propData }: ContactSectionProps =
                         </div>
                     </motion.div>
 
-                    {/* Card 3: Salon Visit Showcase Card */}
+                    {/* Showcase card */}
                     <motion.div
                         variants={cardVariants}
                         className="lg:col-span-3 relative overflow-hidden min-h-[420px] flex flex-col justify-end p-4 sm:p-6 text-white shadow-lg group"
                     >
-                        {/* Salon Interior Background Image */}
+                        {/* Background image */}
                         <Image
                             src={data.showcaseCard.image}
                             alt={data.showcaseCard.title}

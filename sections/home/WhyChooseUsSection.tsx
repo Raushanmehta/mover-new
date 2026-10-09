@@ -36,7 +36,7 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
         <section className="w-full bg-white py-8 lg:py-14 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
-                {/* Left Side: 2x2 Feature & Image Grid */}
+                {/* Feature grid */}
                 <motion.div
                     variants={staggerContainer(0.12)}
                     initial="hidden"
@@ -123,7 +123,7 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                     </motion.div>
                 </motion.div>
 
-                {/* Right Side: Content & Feature List */}
+                {/* Content column */}
                 <motion.div
                     variants={fadeInRight}
                     initial="hidden"

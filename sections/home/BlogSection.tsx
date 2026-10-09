@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import BlogCard from "@/components/cards/BlogCard";
+import BlogCard, { type BlogPost } from "@/components/cards/BlogCard";
 import { motion } from "framer-motion";
 import site from "@/data/index";
 import {
@@ -12,27 +12,34 @@ import {
     staggerContainer,
 } from "@/utils/animations";
 
+interface BlogSectionData {
+    subtitle: string;
+    title: string;
+    titleHighlight: string;
+    description: string;
+    blogPosts?: BlogPost[];
+    posts?: BlogPost[];
+}
+
 interface BlogSectionProps {
-    data?: typeof site.blog;
+    data?: BlogSectionData;
 }
 
 export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
-    const data = propData || site.blog;
-    const blogPosts = (data as any).blogPosts || (data as any).posts;
+    const data = (propData || site.blog) as BlogSectionData;
+    const blogPosts: BlogPost[] = data.blogPosts || data.posts || [];
 
     return (
         <section className="w-full bg-white py-8 lg:py-14 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16">
-
-                {/* Section Header */}
+                {/* Header */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={defaultViewport}
                     className="text-center max-w-3xl mx-auto mb-6 lg:mb-8 flex flex-col items-center gap-3"
                 >
-
-                    {/* Subtitle with Accent Lines */}
+                    {/* Subtitle */}
                     <motion.div
                         variants={subtitleVariants}
                         className="flex items-center gap-2 text-[#D89B33]"
@@ -62,10 +69,9 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
                     >
                         {data.description}
                     </motion.p>
-
                 </motion.div>
 
-                {/* Blog Cards Grid */}
+                {/* Cards grid */}
                 <motion.div
                     variants={staggerContainer(0.12)}
                     initial="hidden"
@@ -73,11 +79,10 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
                     viewport={defaultViewport}
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
                 >
-                    {blogPosts.map((post: any, index: number) => (
-                        <BlogCard key={post.id} post={post} index={index} />
+                    {blogPosts.map((post) => (
+                        <BlogCard key={post.id} post={post} />
                     ))}
                 </motion.div>
-
             </div>
         </section>
     );

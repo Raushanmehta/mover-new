@@ -1,50 +1,69 @@
 "use client";
 
-import React, { useRef, useState, useCallback, useEffect } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
+import { usePathname } from "next/navigation";
 
 const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [pageHeight, setPageHeight] = useState(0);
-
-  const resizePageHeight = useCallback((entries: ResizeObserverEntry[]) => {
-    for (const entry of entries) {
-      setPageHeight(entry.contentRect.height);
-    }
-  }, []);
+  const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+    });
+    lenisRef.current = lenis;
+
+    // Expose global lenis
     if (typeof window !== "undefined") {
-      if (scrollRef.current) {
-        setPageHeight(scrollRef.current.offsetHeight);
-      }
-      const resizeObserver = new ResizeObserver((entries) =>
-        resizePageHeight(entries)
-      );
-      if (scrollRef.current) {
-        resizeObserver.observe(scrollRef.current);
-      }
-      return () => resizeObserver.disconnect();
+      (window as unknown as { __lenis: Lenis }).__lenis = lenis;
     }
-  }, [scrollRef, resizePageHeight]);
 
-  const { scrollY } = useScroll();
-  const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight]);
-  const physics = { damping: 15, mass: 0.27, stiffness: 55 };
-  const spring = useSpring(transform, physics);
+    let rafId: number;
+    function raf(time: number) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
 
-  return (
-    <>
-      <div style={{ height: pageHeight, width: "100%" }} />
-      <motion.div
-        ref={scrollRef}
-        style={{ y: spring }}
-        className="fixed top-0 left-0 w-full flex flex-col min-h-screen will-change-transform"
-      >
-        {children}
-      </motion.div>
-    </>
-  );
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      lenisRef.current = null;
+      if (typeof window !== "undefined") {
+        delete (window as unknown as { __lenis?: Lenis }).__lenis;
+      }
+    };
+  }, []);
+
+  // Reset scroll on route
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    const rafId = requestAnimationFrame(() => {
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(0, { immediate: true });
+      }
+      window.scrollTo(0, 0);
+    });
+
+    return () => cancelAnimationFrame(rafId);
+  }, [pathname]);
+
+  return <>{children}</>;
 };
 
 export default SmoothScroll;

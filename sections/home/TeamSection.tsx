@@ -19,16 +19,14 @@ export default function TeamSection() {
     return (
         <section className="w-full bg-white py-8 lg:py-14 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16">
-
-                {/* Section Header */}
+                {/* Header */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={defaultViewport}
                     className="text-center max-w-3xl mx-auto mb-6 lg:mb-8 flex flex-col items-center gap-2"
                 >
-
-                    {/* Subtitle with Accent Lines */}
+                    {/* Subtitle */}
                     <motion.div
                         variants={subtitleVariants}
                         className="flex items-center gap-3 text-[#D89B33]"
@@ -58,10 +56,9 @@ export default function TeamSection() {
                     >
                         {data.description}
                     </motion.p>
-
                 </motion.div>
 
-                {/* Team Cards Grid */}
+                {/* Team grid */}
                 <motion.div
                     variants={staggerContainer(0.12)}
                     initial="hidden"
@@ -73,7 +70,6 @@ export default function TeamSection() {
                         <TeamCard key={member.id} member={member} index={index} />
                     ))}
                 </motion.div>
-
             </div>
         </section>
     );

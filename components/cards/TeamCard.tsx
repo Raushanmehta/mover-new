@@ -19,7 +19,7 @@ export interface TeamMember {
     };
 }
 
-export default function TeamCard({ member, index = 0 }: { member: TeamMember; index?: number }) {
+export default function TeamCard({ member }: { member: TeamMember; index?: number }) {
     return (
         <motion.div
             key={member.id}
@@ -27,8 +27,7 @@ export default function TeamCard({ member, index = 0 }: { member: TeamMember; in
             whileHover={cardHover.hover}
             className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group cursor-pointer"
         >
-
-            {/* Member Portrait Image */}
+            {/* Portrait image */}
             <div className="relative w-full h-[280px] lg:h-[200px] overflow-hidden bg-gray-100">
                 <Image
                     src={member.image}
@@ -38,26 +37,23 @@ export default function TeamCard({ member, index = 0 }: { member: TeamMember; in
                 />
             </div>
 
-            {/* Member Info Card Body */}
+            {/* Info container */}
             <div className="p-6 flex flex-col items-center justify-between flex-1 w-full gap-3">
                 <div>
-                    {/* Name */}
                     <h3 className="font-serif text-xl font-bold text-gray-900 tracking-tight">
                         {member.name}
                     </h3>
 
-                    {/* Role Tag */}
                     <span className="block text-[11px] font-bold tracking-[0.2em] text-[#D89B33] uppercase mt-1 mb-2">
                         {member.role}
                     </span>
 
-                    {/* Bio */}
                     <p className="text-gray-600 text-xs sm:text-sm leading-relaxed px-1">
                         {member.bio}
                     </p>
                 </div>
 
-                {/* Social Icons */}
+                {/* Social links */}
                 <div className="flex items-center gap-3">
                     <motion.a
                         whileHover={socialIconHover.hover}
@@ -95,9 +91,7 @@ export default function TeamCard({ member, index = 0 }: { member: TeamMember; in
                         <FaLinkedinIn className="h-5 w-5" />
                     </motion.a>
                 </div>
-
             </div>
-
         </motion.div>
     );
 }

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import PageTopSection from "@/components/common/PageTopSection";
-import ServiceDetailSection, { ServiceDetailItem } from "@/pages/ServiceDetailSection";
+import ServiceDetailSection, { ServiceDetailItem } from "@/sections/ServiceDetailSection";
 import site from "@/data/index";
 
 export function generateStaticParams() {
