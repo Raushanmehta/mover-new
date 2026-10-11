@@ -301,9 +301,9 @@ export default function GetAQuoteSection({ data: propData }: GetAQuoteSectionPro
                         {/* Bottom Translucent Quote Box */}
                         <motion.div
                             variants={fadeInUp}
-                            className="relative z-20 mt-8 p-5 ml-42 flex items-start gap-3"
+                            className="relative z-20 mt-6 sm:mt-8 p-4 sm:p-5 w-full md:max-w-md md:ml-auto lg:max-w-[340px] xl:max-w-[370px] bg-black/65 backdrop-blur-md border border-white/10 shadow-2xl flex items-start gap-3 rounded-sm sm:rounded-md"
                         >
-                            <FaQuoteLeft className="text-[#D89B33] text-2xl shrink-0 mt-1" />
+                            <FaQuoteLeft className="text-[#D89B33] text-xl sm:text-2xl shrink-0 mt-1" />
                             <div className="space-y-1">
                                 <p className="text-xs sm:text-sm italic leading-relaxed text-gray-200">
                                     {data.showcaseCard.quote}

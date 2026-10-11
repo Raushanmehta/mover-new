@@ -79,7 +79,7 @@ export default function BlogDetailSection({
 
     return (
         <section className="w-full bg-[#FAF9F6] py-8 lg:py-14 overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-4">
                 {/* Main content */}
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
@@ -89,7 +89,7 @@ export default function BlogDetailSection({
                 >
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 text-[#D89B33]">
-                            <span className="text-xs lg:text-base font-bold uppercase tracking-[0.2em]">
+                            <span className="text-xs lg:text-sm font-bold uppercase tracking-[0.2em]">
                                 {post.category || "Beauty Tips"}
                             </span>
                             <span className="w-8 h-[2px] bg-[#D89B33]" />
@@ -134,9 +134,9 @@ export default function BlogDetailSection({
                     {sections.map((sec, idx) => (
                         <div
                             key={idx}
-                            className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-4 border-t border-gray-200/60"
+                            className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center border-t border-gray-200/60"
                         >
-                            <div className="md:col-span-7 space-y-4">
+                            <div className="md:col-span-7 space-y-1">
                                 <h2 className="font-serif text-xl sm:text-2xl font-bold text-gray-950">
                                     {sec.step ? `${sec.step}. ${sec.title}` : sec.title}
                                 </h2>

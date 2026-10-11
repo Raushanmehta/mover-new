@@ -29,7 +29,7 @@ async function BlogDetailContent({ params }: PageProps) {
     return (
         <main>
             <PageTopSection
-                title={currentPost?.title || "Blog Detail"}
+                title={"Blog Detail"}
                 breadcrumbHome="Home"
                 breadcrumbCurrent="Blog Detail"
                 data={site.pageTopSection}

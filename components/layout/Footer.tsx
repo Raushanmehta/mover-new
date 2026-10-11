@@ -13,7 +13,6 @@ import {
     FaEnvelope,
     FaRegClock,
 } from "react-icons/fa";
-import { HiArrowRight } from "react-icons/hi2";
 import Image from "next/image";
 import site from "@/data/index";
 import {
@@ -22,11 +21,8 @@ import {
     footerItemVariants,
     footerSocialIconVariants,
     lineExpandVariants,
-    buttonHoverTap,
     defaultViewport,
 } from "@/utils/animations";
-
-const MotionLink = motion.create(Link);
 
 const socialIconMap: Record<string, React.ElementType> = {
     facebook: FaFacebookF,
@@ -238,39 +234,13 @@ export default function Footer() {
                     <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
                         {data.cta.description}
                     </p>
-
-                    <div className="pt-2">
-                        <MotionLink
-                            whileHover={buttonHoverTap.hover}
-                            whileTap={buttonHoverTap.tap}
-                            href={data.cta.buttonHref}
-                            className="group flex items-center justify-between w-full max-w-[200px] bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-5 py-3 shadow-lg hover:shadow-[#D89B33]/30 transition-all text-xs uppercase tracking-wider cursor-pointer"
-                        >
-                            <span>{data.cta.buttonText}</span>
-                            <HiArrowRight className="text-base transition-transform group-hover:translate-x-1" />
-                        </MotionLink>
-                    </div>
                 </motion.div>
             </motion.div>
 
             {/* Copyright bar */}
             <div className="border-t border-[#C58A2B]/30 pt-6">
-                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-gray-400">
-                    <p className="text-center sm:text-left">{data.copyright}</p>
-
-                    {/* Legal links */}
-                    <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
-                        {data.legalLinks.map((legal, i) => (
-                            <React.Fragment key={legal.name}>
-                                <Link href={legal.href} className="hover:text-[#D89B33] transition-colors">
-                                    {legal.name}
-                                </Link>
-                                {i < data.legalLinks.length - 1 && (
-                                    <span className="h-3 w-[1px] bg-gray-600" />
-                                )}
-                            </React.Fragment>
-                        ))}
-                    </div>
+                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 flex justify-center items-center text-xs sm:text-sm text-gray-400">
+                    <p className="text-center">{data.copyright}</p>
                 </div>
             </div>
         </footer>

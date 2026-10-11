@@ -296,7 +296,7 @@
                             }
                         ],
                         "contactInfo": {
-                            "address": "123 Beauty Avenue,\nNew Delhi, 110001",
+                            "address": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210",
                             "phone": "+1 000000000",
                             "phoneHref": "tel:+1000000000",
                             "email": "info@xyz.com",
@@ -309,21 +309,8 @@
                             "buttonText": "Get a Quote",
                             "buttonHref": "/get-a-quote"
                         },
-                        "copyright": "© 2026 Haircarft. All Rights Reserved. Powered by Lestow",
-                        "legalLinks": [
-                            {
-                                "name": "Privacy Policy",
-                                "href": "/privacy-policy"
-                            },
-                            {
-                                "name": "Terms & Conditions",
-                                "href": "/terms"
-                            },
-                            {
-                                "name": "Sitemap",
-                                "href": "/sitemap"
-                            }
-                        ]
+                        "copyright": "© 2026 MoverNew. All Rights Reserved. Powered by Lestow",
+                        "legalLinks": []
                     }
                 }
             },
@@ -1705,36 +1692,36 @@
                                 "sections": [
                                     {
                                         "step": "1",
-                                        "title": "Use the Right Shampoo for Your Hair Type",
+                                        "title": "Use Right Shampoo for Your Hair Type",
                                         "content": "Choosing the right shampoo is the first step towards healthy hair. If you have dry hair, go for a hydrating shampoo. For oily hair, choose a gentle, clarifying formula. Always pick sulphate-free products to maintain your hair's natural oils.",
                                         "image": "/images/why-hair-wash.png"
                                     },
                                     {
                                         "step": "2",
                                         "title": "Don't Skip Conditioning",
-                                        "content": "Conditioner helps to lock in moisture, reduce frizz and make your hair softer and more manageable. Apply it to the mid-lengths and ends, avoiding the scalp, and leave it for a few minutes for the best results.",
+                                        "content": "Conditioner helps to lock in moisture, reduce frizz and make your hair softer and more manageable. Apply it to the mid-lengths and ends, avoiding the scalp, and leave it for a few products to maintain your minutes for the best results.",
                                         "image": "/images/service/service-hair-styling.png"
                                     },
                                     {
                                         "step": "3",
                                         "title": "Protect Your Hair from Heat",
-                                        "content": "Frequent use of styling tools like straighteners, curlers and hair dryers can damage your hair. Always use a heat protectant spray and try to keep the temperature at a moderate level to minimize damage.",
+                                        "content": "Frequent use of styling tools like straighteners, curlers and hair dryers can damage your hair. Always use a heat protectant spray and try to keep the temperature at a moderate products to maintain your level to minimize damage.",
                                         "image": "/images/gallery/gallery-1.png"
                                     },
                                     {
                                         "step": "4",
                                         "title": "Maintain a Healthy Diet",
-                                        "content": "Your diet plays a big role in your hair's health. Include foods rich in vitamins, minerals, protein and omega-3 fatty acids such as eggs, nuts, seeds, fish and green leafy vegetables for stronger and shinier hair.",
+                                        "content": "Your diet plays a big role in your hair's health. Include foods rich in vitamins, minerals, protein and omega-3 fatty acids such as eggs, nuts, seeds, fish and green leafy products to maintain your vegetables for stronger and shinier hair.",
                                         "image": "/images/gallery/gallery-2.png"
                                     },
                                     {
                                         "step": "5",
                                         "title": "Get Regular Trims",
-                                        "content": "Trimming your hair every 6–8 weeks helps to remove split ends, prevent breakage and keep your hair looking fresh and healthy.",
+                                        "content": "Trimming your hair every 6–8 weeks helps to remove split ends, prevent breakage and keep your hair looking fresh products to maintain your products to maintain your products to maintain your products to maintain your and healthy.",
                                         "image": "/images/service/service-salon-interior.png"
                                     }
                                 ],
-                                "quote": "Beautiful hair starts with the right care, a healthy lifestyle and a little consistency. Follow these simple tips and enjoy stronger, shinier and more confident hair every day."
+                                "quote": "Beautiful hair starts with the right care, a healthy lifestyle and a little consistency. Follow these simple tips and enjoy stronger, shinier and more confident hair products to maintain your products to maintain your products to maintain your every day."
                             },
                             {
                                 "id": 2,
@@ -2294,7 +2281,7 @@
                             "description": "Visit our salon, give us a call or drop us an email. We’d love to hear from you and help you with all your beauty needs.",
                             "location": {
                                 "title": "Our Location",
-                                "address": "123 Beauty Avenue,\nNew Delhi, 110001"
+                                "address": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210"
                             },
                             "phone": {
                                 "title": "Call Us",

@@ -37,7 +37,7 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
                     initial="hidden"
                     whileInView="visible"
                     viewport={defaultViewport}
-                    className="text-center max-w-3xl mx-auto mb-6 lg:mb-8 flex flex-col items-center gap-3"
+                    className="text-center max-w-3xl mx-auto mb-4 lg:mb-6 flex flex-col items-center gap-3"
                 >
                     {/* Subtitle */}
                     <motion.div
@@ -45,7 +45,7 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
                         className="flex items-center gap-2 text-[#D89B33]"
                     >
                         <span className="w-8 md:w-10 h-[1.5px] bg-[#D89B33]" />
-                        <span className="text-xs md:text-base uppercase tracking-[0.25em] font-semibold">
+                        <span className="text-xs md:text-sm uppercase tracking-[0.25em] font-semibold">
                             {data.subtitle}
                         </span>
                         <span className="w-8 md:w-10 h-[1.5px] bg-[#D89B33]" />
