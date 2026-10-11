@@ -48,7 +48,7 @@ interface ServiceSectionProps {
 
 export default function ServiceSection({ data: propData }: ServiceSectionProps = {}) {
     const data = propData || site.services;
-    const servicesData = data.servicesList || data.services;
+    const servicesData = data.servicesList;
     const [activeTab, setActiveTab] = useState(1);
     const currentService = servicesData?.[activeTab] || servicesData?.[0];
 

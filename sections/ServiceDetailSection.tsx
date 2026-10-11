@@ -85,7 +85,7 @@ export interface ServiceDetailSidebarData {
 }
 
 interface ServiceDetailSectionProps {
-    data?: any;
+    data?: unknown;
     initialServiceId?: string;
     currentSlug?: string;
     serviceData?: ServiceDetailItem;
@@ -101,8 +101,8 @@ export default function ServiceDetailSection({
     servicesList: propList,
     sidebarData: propSidebar,
 }: ServiceDetailSectionProps = {}) {
-    const servicesObj = propData || site.services;
-    const fallbackList = (servicesObj?.servicesList || servicesObj?.services) as unknown as ServiceDetailItem[];
+    const servicesObj = (propData || site.services) as typeof site.services | undefined;
+    const fallbackList = (servicesObj?.servicesList || []) as unknown as ServiceDetailItem[];
     const list = propList || fallbackList || [];
     const sidebar = propSidebar || (servicesObj?.detailSidebar as unknown as ServiceDetailSidebarData);
 

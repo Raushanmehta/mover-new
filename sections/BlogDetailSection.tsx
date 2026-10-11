@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -52,7 +52,7 @@ export interface BlogDetailSidebarData {
 }
 
 interface BlogDetailSectionProps {
-    data?: any;
+    data?: unknown;
     initialSlug?: string;
     currentSlug?: string;
     postData?: BlogPostItem;
@@ -75,7 +75,12 @@ export default function BlogDetailSection({
     postsList: propList,
     sidebarData: propSidebar,
 }: BlogDetailSectionProps = {}) {
-    const blogData = propData || site?.blog;
+    const blogData = (propData || site?.blog) as {
+        blogPosts?: BlogPostItem[];
+        posts?: BlogPostItem[];
+        categories?: Array<{ name: string; count?: number; slug?: string }>;
+        detailSidebar?: BlogDetailSidebarData;
+    } | undefined;
     const list = (propList || blogData?.blogPosts || blogData?.posts || site?.blog?.blogPosts || []) as unknown as BlogPostItem[];
     const sidebar = propSidebar || (blogData?.detailSidebar || site?.blog?.detailSidebar) as unknown as BlogDetailSidebarData;
 
@@ -89,20 +94,15 @@ export default function BlogDetailSection({
         { name: "Beauty Tips", count: 6, slug: "/blog" },
     ]) as Array<{ name: string; count?: number; slug?: string }>;
 
-    const [activeSlug, setActiveSlug] = useState<string>(() => {
-        const target = initialSlug || currentSlug;
-        if (target && list.some((p) => p.slug === target || p.slug === `/blog/${target}` || p.href === `/blog/${target}` || String(p.id) === target)) {
-            return target.replace(/^\/blog\//, "");
-        }
-        return list[0]?.slug?.replace(/^\/blog\//, "") || String(list[0]?.id) || "1";
-    });
-
-    useEffect(() => {
-        const target = initialSlug || currentSlug;
-        if (target && list.some((p) => p.slug === target || p.slug === `/blog/${target}` || p.href === `/blog/${target}` || String(p.id) === target)) {
-            setActiveSlug(target.replace(/^\/blog\//, ""));
-        }
-    }, [initialSlug, currentSlug, list]);
+    const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+    const targetSlug = selectedSlug || initialSlug || currentSlug;
+    const activeSlug =
+        (targetSlug && list.some((p) => p.slug === targetSlug || p.slug === `/blog/${targetSlug}` || p.href === `/blog/${targetSlug}` || String(p.id) === targetSlug)
+            ? targetSlug.replace(/^\/blog\//, "")
+            : null) ||
+        list[0]?.slug?.replace(/^\/blog\//, "") ||
+        String(list[0]?.id) ||
+        "1";
 
     const post =
         propPost ||
@@ -112,15 +112,8 @@ export default function BlogDetailSection({
         }) ||
         list[0];
 
-    const [activeCategory, setActiveCategory] = useState<string>(
-        post?.category || "Hair Care"
-    );
-
-    useEffect(() => {
-        if (post?.category) {
-            setActiveCategory(post.category);
-        }
-    }, [post]);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const activeCategory = selectedCategory || post?.category || "Hair Care";
 
     if (!post) {
         return (
@@ -132,7 +125,7 @@ export default function BlogDetailSection({
 
     const handlePostSelect = (slugOrId: string | number) => {
         const cleanSlug = String(slugOrId).replace(/^\/blog\//, "");
-        setActiveSlug(cleanSlug);
+        setSelectedSlug(cleanSlug);
         if (typeof window !== "undefined") {
             window.history.pushState(null, "", `/blog/${cleanSlug}`);
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -140,7 +133,7 @@ export default function BlogDetailSection({
     };
 
     const handleCategoryClick = (categoryName: string) => {
-        setActiveCategory(categoryName);
+        setSelectedCategory(categoryName);
         const matchingPost = list.find((p) => isCategoryMatch(p.category, categoryName));
         if (matchingPost) {
             handlePostSelect(matchingPost.slug || matchingPost.id);
@@ -270,7 +263,6 @@ export default function BlogDetailSection({
                             <div className="space-y-3">
                                 {displayRecentPosts.map((rPost) => {
                                     const rSlug = rPost.slug?.replace(/^\/blog\//, "") || String(rPost.id);
-                                    const rHref = `/blog/${rSlug}`;
                                     const rDate = rPost.date || `${rPost.day} ${rPost.month}, ${rPost.year || 2026}`;
 
                                     return (
