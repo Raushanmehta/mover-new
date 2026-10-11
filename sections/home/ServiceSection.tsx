@@ -173,6 +173,7 @@ export default function ServiceSection({ data: propData }: ServiceSectionProps =
                                             src={currentService.mainImg}
                                             alt={currentService.title}
                                             fill
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
                                             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                                         />
                                     </motion.div>
@@ -190,6 +191,7 @@ export default function ServiceSection({ data: propData }: ServiceSectionProps =
                                         src={currentService.salonImg}
                                         alt="Salon Interior"
                                         fill
+                                        sizes="(max-width: 1024px) 50vw, 25vw"
                                         className="object-cover object-center transition-transform duration-700 hover:scale-105"
                                     />
                                 </motion.div>

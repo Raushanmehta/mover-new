@@ -85,6 +85,8 @@ export interface ServiceDetailSidebarData {
 }
 
 interface ServiceDetailSectionProps {
+    data?: any;
+    initialServiceId?: string;
     currentSlug?: string;
     serviceData?: ServiceDetailItem;
     servicesList?: ServiceDetailItem[];
@@ -92,18 +94,22 @@ interface ServiceDetailSectionProps {
 }
 
 export default function ServiceDetailSection({
+    data: propData,
+    initialServiceId,
     currentSlug,
     serviceData: propService,
     servicesList: propList,
     sidebarData: propSidebar,
 }: ServiceDetailSectionProps = {}) {
-    const fallbackList = (site.services.servicesList || site.services.services) as unknown as ServiceDetailItem[];
-    const list = propList || fallbackList;
-    const sidebar = propSidebar || (site.services.detailSidebar as unknown as ServiceDetailSidebarData);
+    const servicesObj = propData || site.services;
+    const fallbackList = (servicesObj?.servicesList || servicesObj?.services) as unknown as ServiceDetailItem[];
+    const list = propList || fallbackList || [];
+    const sidebar = propSidebar || (servicesObj?.detailSidebar as unknown as ServiceDetailSidebarData);
 
+    const slugToFind = initialServiceId || currentSlug;
     const activeService: ServiceDetailItem =
         propService ||
-        list.find((s) => (s.slug || s.id) === currentSlug) ||
+        list.find((s) => (s.slug || s.id) === slugToFind) ||
         list.find((s) => (s.slug || s.id) === "bleaching") ||
         list[0];
 
@@ -226,6 +232,7 @@ export default function ServiceDetailSection({
                                 src={sidebar.specialOffer.image}
                                 alt={sidebar.specialOffer.title}
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 400px"
                                 className="object-cover object-right opacity-30 pointer-events-none"
                             />
 
@@ -278,6 +285,7 @@ export default function ServiceDetailSection({
                             alt={activeService.title || activeService.name}
                             fill
                             priority
+                            sizes="(max-width: 1024px) 100vw, 850px"
                             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         />
                     </motion.div>
@@ -362,6 +370,7 @@ export default function ServiceDetailSection({
                                     src={howItWorks.image}
                                     alt={howItWorks.title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 350px"
                                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                                 />
                             </motion.div>
@@ -406,6 +415,7 @@ export default function ServiceDetailSection({
                                     src={keyBenefits.image}
                                     alt={keyBenefits.title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 350px"
                                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                                 />
                             </motion.div>

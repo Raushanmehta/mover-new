@@ -27,9 +27,10 @@ const iconMap: Record<string, React.ElementType> = {
 
 interface WhyChooseUsSectionProps {
     data?: typeof site.whyChooseUs;
+    showButton?: boolean;
 }
 
-export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectionProps = {}) {
+export default function WhyChooseUsSection({ data: propData, showButton = true }: WhyChooseUsSectionProps = {}) {
     const data = propData || site.whyChooseUs;
 
     return (
@@ -79,6 +80,7 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                             src={data.card2.image}
                             alt={data.card2.alt}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         />
                     </motion.div>
@@ -92,6 +94,7 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                             src={data.card3.image}
                             alt={data.card3.alt}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         />
                     </motion.div>
@@ -200,17 +203,19 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                     </motion.div>
 
                     {/* CTA Button */}
-                    <div className="pt-2">
-                        <motion.a
-                            whileHover={buttonHoverTap.hover}
-                            whileTap={buttonHoverTap.tap}
-                            href={data.ctaButton.href}
-                            className="group flex items-center gap-3 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-7 py-3.5 shadow-md hover:shadow-lg transition-all text-sm md:text-base cursor-pointer"
-                        >
-                            <span>{data.ctaButton.text}</span>
-                            <HiArrowRight className="text-xl transition-transform group-hover:translate-x-1" />
-                        </motion.a>
-                    </div>
+                    {showButton && data.ctaButton && (
+                        <div className="pt-2">
+                            <motion.a
+                                whileHover={buttonHoverTap.hover}
+                                whileTap={buttonHoverTap.tap}
+                                href={data.ctaButton.href}
+                                className="group flex items-center gap-3 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-7 py-3.5 shadow-md hover:shadow-lg transition-all text-sm md:text-base cursor-pointer"
+                            >
+                                <span>{data.ctaButton.text}</span>
+                                <HiArrowRight className="text-xl transition-transform group-hover:translate-x-1" />
+                            </motion.a>
+                        </div>
+                    )}
 
                 </motion.div>
 

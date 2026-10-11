@@ -98,4 +98,5 @@ const siteMap = {
 
 export type SiteData = typeof siteMap;
 export const site = siteMap;
+export { siteMap };
 export default site;

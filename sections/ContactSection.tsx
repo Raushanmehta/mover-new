@@ -337,6 +337,7 @@ export default function ContactSection({ data: propData }: ContactSectionProps =
                             src={data.showcaseCard.image}
                             alt={data.showcaseCard.title}
                             fill
+                            sizes="(max-width: 1024px) 100vw, 25vw"
                             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         />
 

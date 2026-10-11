@@ -13,8 +13,8 @@ export default function AboutPage() {
                 breadcrumbCurrent="About Us"
                 data={site.pageTopSection}
             />
-            <AboutSection data={site.about} />
-            <WhyChooseUsSection data={site.whyChooseUs} />
+            <AboutSection data={site.about} showButton={false} />
+            <WhyChooseUsSection data={site.whyChooseUs} showButton={false} />
             <CtaSection data={site.cta} />
         </main>
     );

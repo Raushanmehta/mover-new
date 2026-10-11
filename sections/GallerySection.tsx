@@ -189,6 +189,7 @@ export default function GallerySection({ data: propData }: GallerySectionProps =
                                     src={filteredItems[selectedImageIndex].image}
                                     alt={filteredItems[selectedImageIndex].title}
                                     fill
+                                    sizes="(max-width: 1024px) 95vw, 900px"
                                     className="object-contain object-center"
                                 />
                             </div>

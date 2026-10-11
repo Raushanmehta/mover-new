@@ -36,6 +36,7 @@ export default function PageTopSection({
                     alt={finalTitle}
                     fill
                     priority
+                    sizes="100vw"
                     className="object-cover object-center brightness-[0.7]"
                 />
                 {/* Dark Overlay for Text Readability */}

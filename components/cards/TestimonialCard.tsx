@@ -42,6 +42,7 @@ export default function TestimonialCard({
                     src={data.image}
                     alt={data.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
                     className="object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
             </div>

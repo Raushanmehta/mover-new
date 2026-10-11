@@ -28,9 +28,10 @@ const iconMap: Record<string, React.ElementType> = {
 
 interface AboutSectionProps {
     data?: typeof site.about;
+    showButton?: boolean;
 }
 
-export default function AboutSection({ data: propData }: AboutSectionProps = {}) {
+export default function AboutSection({ data: propData, showButton = true }: AboutSectionProps = {}) {
     const data = propData || site.about;
 
     return (
@@ -59,6 +60,7 @@ export default function AboutSection({ data: propData }: AboutSectionProps = {})
                                 src={data.images.portrait}
                                 alt={`${data.titleLine1} ${data.titleLine2} ${data.titleHighlight}`}
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="object-cover object-center transition-transform duration-700 hover:scale-105"
                             />
                         </motion.div>
@@ -75,6 +77,7 @@ export default function AboutSection({ data: propData }: AboutSectionProps = {})
                                 src={data.images.salon}
                                 alt="Luxury Salon Ambience"
                                 fill
+                                sizes="(max-width: 1024px) 50vw, 25vw"
                                 className="object-cover object-top transition-transform duration-700 hover:scale-105"
                             />
                         </motion.div>
@@ -160,17 +163,19 @@ export default function AboutSection({ data: propData }: AboutSectionProps = {})
                     </motion.div>
 
                     {/* CTA Button */}
-                    <div className="pt-1">
-                        <motion.a
-                            whileHover={buttonHoverTap.hover}
-                            whileTap={buttonHoverTap.tap}
-                            href={data.ctaButton.href}
-                            className="group flex items-center gap-3 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-7 py-3.5 shadow-md hover:shadow-lg transition-all text-sm md:text-base cursor-pointer"
-                        >
-                            <span>{data.ctaButton.text}</span>
-                            <HiArrowRight className="text-xl transition-transform group-hover:translate-x-1" />
-                        </motion.a>
-                    </div>
+                    {showButton && data.ctaButton && (
+                        <div className="pt-1">
+                            <motion.a
+                                whileHover={buttonHoverTap.hover}
+                                whileTap={buttonHoverTap.tap}
+                                href={data.ctaButton.href}
+                                className="group flex items-center gap-3 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-7 py-3.5 shadow-md hover:shadow-lg transition-all text-sm md:text-base cursor-pointer"
+                            >
+                                <span>{data.ctaButton.text}</span>
+                                <HiArrowRight className="text-xl transition-transform group-hover:translate-x-1" />
+                            </motion.a>
+                        </div>
+                    )}
 
                 </motion.div>
 

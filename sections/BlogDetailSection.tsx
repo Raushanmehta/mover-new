@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronRight, FaQuoteLeft, FaRegCalendarAlt, FaRegFolderOpen } from "react-icons/fa";
 import { HiArrowRight } from "react-icons/hi2";
 import site from "@/data/index";
@@ -52,119 +52,203 @@ export interface BlogDetailSidebarData {
 }
 
 interface BlogDetailSectionProps {
+    data?: any;
+    initialSlug?: string;
     currentSlug?: string;
     postData?: BlogPostItem;
     postsList?: BlogPostItem[];
     sidebarData?: BlogDetailSidebarData;
 }
 
+function isCategoryMatch(postCat?: string, catName?: string): boolean {
+    if (!postCat || !catName) return false;
+    const a = postCat.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+    const b = catName.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+    return a === b || a.includes(b) || b.includes(a);
+}
+
 export default function BlogDetailSection({
+    data: propData,
+    initialSlug,
     currentSlug,
     postData: propPost,
     postsList: propList,
     sidebarData: propSidebar,
 }: BlogDetailSectionProps = {}) {
-    const list = propList || ((site.blog.blogPosts || site.blog.posts) as unknown as BlogPostItem[]);
-    const sidebar = propSidebar || (site.blog.detailSidebar as unknown as BlogDetailSidebarData);
+    const blogData = propData || site?.blog;
+    const list = (propList || blogData?.blogPosts || blogData?.posts || site?.blog?.blogPosts || []) as unknown as BlogPostItem[];
+    const sidebar = propSidebar || (blogData?.detailSidebar || site?.blog?.detailSidebar) as unknown as BlogDetailSidebarData;
+
+    const categories = (sidebar?.categories || blogData?.categories || [
+        { name: "Hair Care", count: 8, slug: "/blog" },
+        { name: "Hair Styling", count: 6, slug: "/blog" },
+        { name: "Skin Care", count: 5, slug: "/blog" },
+        { name: "Makeup", count: 4, slug: "/blog" },
+        { name: "Facial Treatments", count: 7, slug: "/blog" },
+        { name: "Nail Care", count: 3, slug: "/blog" },
+        { name: "Beauty Tips", count: 6, slug: "/blog" },
+    ]) as Array<{ name: string; count?: number; slug?: string }>;
+
+    const [activeSlug, setActiveSlug] = useState<string>(() => {
+        const target = initialSlug || currentSlug;
+        if (target && list.some((p) => p.slug === target || p.slug === `/blog/${target}` || p.href === `/blog/${target}` || String(p.id) === target)) {
+            return target.replace(/^\/blog\//, "");
+        }
+        return list[0]?.slug?.replace(/^\/blog\//, "") || String(list[0]?.id) || "1";
+    });
+
+    useEffect(() => {
+        const target = initialSlug || currentSlug;
+        if (target && list.some((p) => p.slug === target || p.slug === `/blog/${target}` || p.href === `/blog/${target}` || String(p.id) === target)) {
+            setActiveSlug(target.replace(/^\/blog\//, ""));
+        }
+    }, [initialSlug, currentSlug, list]);
 
     const post =
         propPost ||
-        list.find((p) => p.slug === currentSlug || p.slug === `/blog/${currentSlug}` || p.href === `/blog/${currentSlug}`) ||
+        list.find((p) => {
+            const clean = p.slug?.replace(/^\/blog\//, "") || String(p.id);
+            return clean === activeSlug || p.slug === activeSlug || p.href === `/blog/${activeSlug}`;
+        }) ||
         list[0];
 
-    const currentPostSlug = post.slug?.replace(/^\/blog\//, "") || "";
-    const recentPosts = list.filter((p) => (p.slug?.replace(/^\/blog\//, "") !== currentPostSlug)).slice(0, 4);
+    const [activeCategory, setActiveCategory] = useState<string>(
+        post?.category || "Hair Care"
+    );
+
+    useEffect(() => {
+        if (post?.category) {
+            setActiveCategory(post.category);
+        }
+    }, [post]);
+
+    if (!post) {
+        return (
+            <section className="w-full bg-[#FAF9F6] py-16 text-center">
+                <p className="text-gray-500 font-sans text-base">Blog post not found.</p>
+            </section>
+        );
+    }
+
+    const handlePostSelect = (slugOrId: string | number) => {
+        const cleanSlug = String(slugOrId).replace(/^\/blog\//, "");
+        setActiveSlug(cleanSlug);
+        if (typeof window !== "undefined") {
+            window.history.pushState(null, "", `/blog/${cleanSlug}`);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
+
+    const handleCategoryClick = (categoryName: string) => {
+        setActiveCategory(categoryName);
+        const matchingPost = list.find((p) => isCategoryMatch(p.category, categoryName));
+        if (matchingPost) {
+            handlePostSelect(matchingPost.slug || matchingPost.id);
+        }
+    };
+
+    const currentPostSlug = post.slug?.replace(/^\/blog\//, "") || String(post.id);
+    const recentPosts = list.filter((p) => (p.slug?.replace(/^\/blog\//, "") !== currentPostSlug && String(p.id) !== currentPostSlug)).slice(0, 4);
+    const displayRecentPosts = recentPosts.length > 0 ? recentPosts : list.slice(0, 4);
     const sections = post.sections || [];
     const formattedDate = post.date || (post.day && post.month ? `${post.day} ${post.month}, ${post.year || 2026}` : "12 Mar, 2026");
 
     return (
         <section className="w-full bg-[#FAF9F6] py-8 lg:py-14 overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-4 md:px-8 lg:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 {/* Main content */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="lg:col-span-8 flex flex-col gap-4"
-                >
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2 text-[#D89B33]">
-                            <span className="text-xs lg:text-sm font-bold uppercase tracking-[0.2em]">
-                                {post.category || "Beauty Tips"}
-                            </span>
-                            <span className="w-8 h-[2px] bg-[#D89B33]" />
-                        </div>
-
-                        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-950 leading-tight">
-                            {post.title}
-                        </h1>
-
-                        <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-gray-500 font-medium pt-1">
-                            <span className="flex items-center gap-2">
-                                <FaRegCalendarAlt className="text-[#D89B33]" />
-                                {formattedDate}
-                            </span>
-                            {post.subCategory && (
-                                <span className="flex items-center gap-2">
-                                    <FaRegFolderOpen className="text-[#D89B33]" />
-                                    {post.subCategory}
-                                </span>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Banner image */}
-                    <div className="relative w-full h-[320px] sm:h-[440px] overflow-hidden shadow-md bg-gray-200">
-                        <Image
-                            src={post.bannerImage || post.image}
-                            alt={post.title}
-                            fill
-                            priority
-                            className="object-cover object-center"
-                        />
-                    </div>
-
-                    {(post.intro || post.excerpt) && (
-                        <p className="font-sans text-gray-600 text-base sm:text-lg leading-relaxed">
-                            {post.intro || post.excerpt}
-                        </p>
-                    )}
-
-                    {/* Article sections */}
-                    {sections.map((sec, idx) => (
-                        <div
-                            key={idx}
-                            className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center border-t border-gray-200/60"
+                <div className="lg:col-span-8">
+                    <AnimatePresence mode="wait">
+                        <motion.article
+                            key={post.id || currentPostSlug}
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -15 }}
+                            transition={{ duration: 0.35 }}
+                            className="flex flex-col gap-6"
                         >
-                            <div className="md:col-span-7 space-y-1">
-                                <h2 className="font-serif text-xl sm:text-2xl font-bold text-gray-950">
-                                    {sec.step ? `${sec.step}. ${sec.title}` : sec.title}
-                                </h2>
-                                <p className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed">
-                                    {sec.content}
-                                </p>
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2 text-[#D89B33]">
+                                    <span className="text-xs lg:text-sm font-bold uppercase tracking-[0.2em]">
+                                        {post.category || "Beauty Tips"}
+                                    </span>
+                                    <span className="w-8 h-[2px] bg-[#D89B33]" />
+                                </div>
+
+                                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-950 leading-tight">
+                                    {post.title}
+                                </h1>
+
+                                <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-gray-500 font-medium pt-1 border-b border-gray-200/60 pb-3">
+                                    <span className="flex items-center gap-2">
+                                        <FaRegCalendarAlt className="text-[#D89B33]" />
+                                        {formattedDate}
+                                    </span>
+                                    {post.subCategory && (
+                                        <span className="flex items-center gap-2">
+                                            <FaRegFolderOpen className="text-[#D89B33]" />
+                                            {post.subCategory}
+                                        </span>
+                                    )}
+                                </div>
                             </div>
-                            <div className="md:col-span-5 relative h-[180px] overflow-hidden shadow-sm bg-gray-200">
+
+                            {/* Banner image */}
+                            <div className="relative w-full h-[320px] sm:h-[440px] overflow-hidden shadow-md bg-gray-200 group">
                                 <Image
-                                    src={sec.image}
-                                    alt={sec.title}
+                                    src={post.bannerImage || post.image}
+                                    alt={post.title}
                                     fill
-                                    className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                                    priority
+                                    sizes="(max-width: 1024px) 100vw, 850px"
+                                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
-                        </div>
-                    ))}
 
-                    {/* Quote box */}
-                    {post.quote && (
-                        <div className="p-6 sm:p-8 bg-[#F7F5F0] border-l-4 border-[#D89B33] border-y border-r border-amber-200/60 flex items-start gap-4 mt-2 shadow-sm">
-                            <FaQuoteLeft className="text-[#D89B33] text-3xl shrink-0 mt-1" />
-                            <p className="font-serif italic text-base sm:text-lg text-gray-800 leading-relaxed">
-                                &ldquo;{post.quote}&rdquo;
-                            </p>
-                        </div>
-                    )}
-                </motion.div>
+                            {(post.intro || post.excerpt) && (
+                                <p className="font-sans text-gray-600 text-base sm:text-lg leading-relaxed">
+                                    {post.intro || post.excerpt}
+                                </p>
+                            )}
+
+                            {/* Article sections */}
+                            {sections.map((sec, idx) => (
+                                <div
+                                    key={idx}
+                                    className="grid grid-cols-1 md:grid-cols-12 gap-2 items-start border-b border-gray-200/60"
+                                >
+                                    <div className="md:col-span-7 space-y-2">
+                                        <h2 className="font-serif text-xl sm:text-2xl font-bold text-gray-950">
+                                            {sec.step ? `${sec.step}. ${sec.title}` : sec.title}
+                                        </h2>
+                                        <p className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                                            {sec.content}
+                                        </p>
+                                    </div>
+                                    <div className="md:col-span-5 relative h-[200px] sm:h-[220px] overflow-hidden shadow-sm bg-gray-200">
+                                        <Image
+                                            src={sec.image}
+                                            alt={sec.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 350px"
+                                            className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+
+                            {/* Quote box */}
+                            {post.quote && (
+                                <div className="p-6 sm:p-8 bg-[#F7F5F0] border-l-4 border-[#D89B33] border-y border-r border-amber-200/60 flex items-start gap-4 shadow-sm">
+                                    <FaQuoteLeft className="text-[#D89B33] text-3xl shrink-0 mt-1" />
+                                    <p className="font-serif italic text-base sm:text-lg text-gray-800 leading-relaxed">
+                                        &ldquo;{post.quote}&rdquo;
+                                    </p>
+                                </div>
+                            )}
+                        </motion.article>
+                    </AnimatePresence>
+                </div>
 
                 {/* Sidebar */}
                 <motion.div
@@ -174,36 +258,37 @@ export default function BlogDetailSection({
                     className="lg:col-span-4 flex flex-col gap-8"
                 >
                     {/* Recent posts */}
-                    {recentPosts.length > 0 && (
+                    {displayRecentPosts.length > 0 && (
                         <div className="bg-[#F7F5F0] p-6 border border-gray-200/80 shadow-sm space-y-4">
                             <div>
                                 <h3 className="font-serif text-xl font-bold text-gray-950">
                                     {sidebar?.recentPostsTitle || "Recent Posts"}
                                 </h3>
-                                <span className="block w-8 h-[2px] bg-[#D89B33] mt-2" />
+                                <span className="block w-10 h-[2.5px] bg-[#D89B33] mt-2 rounded-full" />
                             </div>
 
-                            <div className="space-y-4">
-                                {recentPosts.map((rPost) => {
-                                    const rSlug = rPost.slug?.replace(/^\/blog\//, "") || "";
+                            <div className="space-y-3">
+                                {displayRecentPosts.map((rPost) => {
+                                    const rSlug = rPost.slug?.replace(/^\/blog\//, "") || String(rPost.id);
                                     const rHref = `/blog/${rSlug}`;
                                     const rDate = rPost.date || `${rPost.day} ${rPost.month}, ${rPost.year || 2026}`;
 
                                     return (
-                                        <Link
+                                        <div
                                             key={rPost.id}
-                                            href={rHref}
-                                            className="flex items-center gap-4 group"
+                                            onClick={() => handlePostSelect(rSlug)}
+                                            className="flex items-center gap-4 group cursor-pointer p-1.5 rounded-xl hover:bg-gray-200/40 transition-colors"
                                         >
-                                            <div className="relative w-16 h-16 overflow-hidden shrink-0 bg-gray-200">
+                                            <div className="relative w-16 h-16 overflow-hidden shrink-0 bg-gray-200 rounded-lg">
                                                 <Image
                                                     src={rPost.image}
                                                     alt={rPost.title}
                                                     fill
-                                                    className="object-cover object-center group-hover:scale-105 transition-transform"
+                                                    sizes="64px"
+                                                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                                                 />
                                             </div>
-                                            <div className="space-y-1">
+                                            <div className="space-y-1 min-w-0 flex-1">
                                                 <h4 className="font-serif text-xs sm:text-sm font-bold text-gray-900 group-hover:text-[#D89B33] transition-colors leading-snug line-clamp-2">
                                                     {rPost.title}
                                                 </h4>
@@ -211,7 +296,7 @@ export default function BlogDetailSection({
                                                     {rDate}
                                                 </span>
                                             </div>
-                                        </Link>
+                                        </div>
                                     );
                                 })}
                             </div>
@@ -220,11 +305,12 @@ export default function BlogDetailSection({
 
                     {/* Promo card */}
                     {sidebar?.cta && (
-                        <div className="relative overflow-hidden min-h-[320px] flex flex-col justify-end text-white shadow-lg bg-gray-950 space-y-4">
+                        <div className="relative overflow-hidden min-h-[320px] flex flex-col justify-end text-white shadow-lg bg-gray-950 space-y-4 rounded-xl">
                             <Image
                                 src={sidebar.cta.image}
                                 alt={sidebar.cta.title}
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 400px"
                                 className="object-cover object-center brightness-[0.7]"
                             />
 
@@ -242,7 +328,7 @@ export default function BlogDetailSection({
 
                                 <Link
                                     href={sidebar.cta.buttonHref}
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-6 py-2.5 shadow text-xs sm:text-sm uppercase tracking-wider hover:brightness-105 transition-all"
+                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#D89B33] via-[#E2A944] to-[#B87A1E] text-gray-950 font-semibold px-6 py-2.5 shadow text-xs sm:text-sm uppercase tracking-wider hover:brightness-105 transition-all rounded-md"
                                 >
                                     <span>{sidebar.cta.buttonText}</span>
                                     <HiArrowRight className="text-sm" />
@@ -251,34 +337,52 @@ export default function BlogDetailSection({
                         </div>
                     )}
 
-                    {/* Categories */}
-                    {sidebar?.categories && (
+                    {/* Categories Widget */}
+                    {categories && categories.length > 0 && (
                         <div className="bg-[#F7F5F0] p-6 border border-gray-200/80 shadow-sm space-y-4">
                             <div>
-                                <h3 className="font-serif text-xl font-bold text-gray-950">
-                                    {sidebar.categoriesTitle || "Categories"}
+                                <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-950">
+                                    {sidebar?.categoriesTitle || "Categories"}
                                 </h3>
-                                <span className="block w-8 h-[2px] bg-[#D89B33] mt-2" />
+                                <span className="block w-10 h-[2.5px] bg-[#D89B33] mt-2 rounded-full" />
                             </div>
 
-                            <ul className="space-y-2">
-                                {sidebar.categories.map((cat, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={cat.slug}
-                                            className="flex items-center justify-between py-2.5 text-xs sm:text-sm font-medium text-gray-700 hover:text-[#D89B33] transition-colors group"
+                            <div className="space-y-2">
+                                {categories.map((cat, idx) => {
+                                    const isActive = isCategoryMatch(activeCategory, cat.name);
+                                    return (
+                                        <motion.button
+                                            key={idx}
+                                            type="button"
+                                            whileHover={{ x: 4 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            onClick={() => handleCategoryClick(cat.name)}
+                                            className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs sm:text-sm lg:text-base transition-all duration-200 cursor-pointer text-left ${isActive
+                                                ? "bg-gradient-to-r from-amber-100/80 via-amber-50 to-amber-50/20 text-[#B87A1E] font-bold border-l-4 border-[#D89B33] shadow-xs"
+                                                : "text-gray-700 hover:bg-gray-100/70 hover:text-[#D89B33]"
+                                                }`}
                                         >
-                                            <span>
-                                                {cat.name} <span className="text-gray-400">({cat.count})</span>
-                                            </span>
-                                            <FaChevronRight className="text-xs text-gray-400 group-hover:text-[#D89B33] transition-colors" />
-                                        </Link>
-                                        {index < sidebar.categories.length - 1 && (
-                                            <span className="block w-full h-[1px] bg-gray-200/60" />
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
+                                            <span className="truncate pr-2 font-medium">{cat.name}</span>
+                                            <div className="flex items-center space-x-2 shrink-0">
+                                                {typeof cat.count !== "undefined" && (
+                                                    <span
+                                                        className={`text-xs px-2.5 py-0.5 rounded-full font-semibold transition-colors ${isActive
+                                                            ? "bg-[#D89B33] text-gray-950 shadow-xs"
+                                                            : "bg-white border border-gray-200 text-gray-500"
+                                                            }`}
+                                                    >
+                                                        {cat.count}
+                                                    </span>
+                                                )}
+                                                <FaChevronRight
+                                                    className={`w-3.5 h-3.5 transition-colors ${isActive ? "text-[#D89B33]" : "text-gray-400"
+                                                        }`}
+                                                />
+                                            </div>
+                                        </motion.button>
+                                    );
+                                })}
+                            </div>
                         </div>
                     )}
                 </motion.div>

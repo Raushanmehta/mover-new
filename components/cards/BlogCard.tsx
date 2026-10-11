@@ -44,12 +44,13 @@ export default function BlogCard({ post }: { post: BlogPost; index?: number }) {
                         src={post.image}
                         alt={post.title}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                 </div>
 
                 {/* Content */}
-                <div className="p-4 flex flex-col gap-2">
+                <div className="px-4 py-2 flex flex-col gap-2">
                     <span className="text-[11px] font-bold tracking-[0.2em] text-[#D89B33] uppercase">
                         {post.category}
                     </span>

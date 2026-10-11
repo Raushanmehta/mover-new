@@ -28,6 +28,7 @@ export default function HeroSection() {
                     alt={`${data.titleLine1} ${data.titleLine2} ${data.titleHighlight}`}
                     fill
                     priority
+                    sizes="100vw"
                     className="object-cover object-right lg:object-center brightness-[0.95]"
                 />
                 {/* Soft overlay */}

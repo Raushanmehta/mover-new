@@ -244,6 +244,7 @@ export default function GetAQuoteSection({ data: propData }: GetAQuoteSectionPro
                             src={data.showcaseCard.image}
                             alt={data.showcaseCard.title}
                             fill
+                            sizes="(max-width: 1024px) 100vw, 42vw"
                             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         />
 

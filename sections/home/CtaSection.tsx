@@ -34,6 +34,7 @@ export default function CtaSection({ data: propData }: CtaSectionProps = {}) {
                     alt={data.subtitle}
                     fill
                     priority
+                    sizes="100vw"
                     className="object-cover object-right lg:object-center brightness-100"
                 />
                 {/* Dark overlay */}
