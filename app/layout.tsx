@@ -39,9 +39,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${roboto.variable} ${bodoniModa.variable} ${allura.variable} ${roboto.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans">
         <SmoothScroll>
           <Suspense>
             <Header />

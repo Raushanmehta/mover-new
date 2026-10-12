@@ -38,6 +38,8 @@ export type MoverNewPageTopData = MoverNewSections["pageTopSection"]["variants"]
 export type MoverNewGetAQuoteData = MoverNewSections["getAQuote"]["variants"]["MoverNewGetAQuote1"];
 export type MoverNewGalleryData = MoverNewSections["gallery"]["variants"]["MoverNewGallery1"];
 export type MoverNewContactData = MoverNewSections["contact"]["variants"]["MoverNewContact1"];
+export type MoverNewThankYouData = MoverNewSections["thankYou"]["variants"]["MoverNewThankYou1"];
+export type MoverNewNotFoundData = MoverNewSections["notFound"]["variants"]["MoverNewNotFound1"];
 
 // Optional item types
 export type NavItem = MoverNewNavbarData["navItems"][number];
@@ -72,6 +74,8 @@ export const siteMap = {
   getAQuote: sec.getAQuote.variants.MoverNewGetAQuote1,
   gallery: sec.gallery.variants.MoverNewGallery1,
   contact: sec.contact.variants.MoverNewContact1,
+  thankYou: sec.thankYou.variants.MoverNewThankYou1,
+  notFound: sec.notFound.variants.MoverNewNotFound1,
 
   // Compatibility section shortcuts
   topbarData: sec.topbar.variants.MoverNewTopbar1,
@@ -90,6 +94,8 @@ export const siteMap = {
   getAQuoteData: sec.getAQuote.variants.MoverNewGetAQuote1,
   galleryData: sec.gallery.variants.MoverNewGallery1,
   contactData: sec.contact.variants.MoverNewContact1,
+  thankYouData: sec.thankYou.variants.MoverNewThankYou1,
+  notFoundData: sec.notFound.variants.MoverNewNotFound1,
 
   // Root Tree
   MoverNew: siteData.MoverNew,

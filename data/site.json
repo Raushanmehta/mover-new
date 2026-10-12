@@ -2089,6 +2089,95 @@
                         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d149561.7135517701!2d-118.18256653462869!3d34.07263686826212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1791453615761!5m2!1sen!2sin"
                     }
                 }
+            },
+            "thankYou": {
+                "variants": {
+                    "MoverNewThankYou1": {
+                        "pageTop": {
+                            "title": "Thank You",
+                            "breadcrumbCurrent": "Thank You"
+                        },
+                        "eyebrow": "CONFIRMATION & APPRECIATION",
+                        "title": "Thank You for Reaching Out to MoverNew",
+                        "subtitle": "Your message has been received with high priority. Our relocation coordinators are reviewing your requirements and will contact you shortly with a personalized quotation and moving plan.",
+                        "features": [
+                            {
+                                "icon": "truck",
+                                "title": "Dedicated Moving Plan",
+                                "description": "Our logistics coordinators will tailor a step-by-step moving strategy tailored to your exact timeline."
+                            },
+                            {
+                                "icon": "clock",
+                                "title": "Swift Response Time",
+                                "description": "We review inquiries promptly and deliver an accurate estimate within 24 hours."
+                            },
+                            {
+                                "icon": "shield",
+                                "title": "Full-Value Protection",
+                                "description": "Certified packing materials, insured handling, and experienced transport personnel."
+                            }
+                        ],
+                        "supportCard": {
+                            "title": "Need Immediate Moving Support?",
+                            "description": "Speak directly with our logistics team or drop us an email anytime.",
+                            "phone": "+1 000000000",
+                            "phoneHref": "tel:+1000000000",
+                            "email": "info@xyz.com",
+                            "emailHref": "mailto:info@xyz.com"
+                        },
+                        "buttons": {
+                            "home": {
+                                "text": "Return to Home",
+                                "href": "/"
+                            },
+                            "services": {
+                                "text": "Explore Services",
+                                "href": "/services"
+                            }
+                        }
+                    }
+                }
+            },
+            "notFound": {
+                "variants": {
+                    "MoverNewNotFound1": {
+                        "pageTop": {
+                            "title": "404 - Page Not Found",
+                            "breadcrumbCurrent": "404 Not Found"
+                        },
+                        "code": "404",
+                        "badge": "DESTINATION NOT FOUND • ERROR 404",
+                        "title": "Looks Like You've Reached an Uncharted Route",
+                        "description": "The page you are trying to visit may have been relocated, removed, or is temporarily unavailable. Let us help you navigate back on track.",
+                        "buttons": {
+                            "home": {
+                                "text": "Back to Home",
+                                "href": "/"
+                            },
+                            "services": {
+                                "text": "Browse Services",
+                                "href": "/services"
+                            }
+                        },
+                        "quickLinksSection": {
+                            "title": "Explore Popular Routes",
+                            "links": [
+                                {
+                                    "title": "About Us",
+                                    "href": "/about"
+                                },
+                                {
+                                    "title": "Get a Quote",
+                                    "href": "/get-a-quote"
+                                },
+                                {
+                                    "title": "Contact Us",
+                                    "href": "/contact"
+                                }
+                            ]
+                        }
+                    }
+                }
             }
         }
     }
