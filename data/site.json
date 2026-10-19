@@ -127,7 +127,7 @@
             "topbar": {
                 "variants": {
                     "MoverNewTopbar1": {
-                        "location": "Mumbai, India",
+                        "location": "Beverly Hills, CA",
                         "phone": "+1 000000000",
                         "phoneHref": "tel:+1000000000",
                         "email": "info@xyz.com",
@@ -161,7 +161,7 @@
                 "variants": {
                     "MoverNewNavbar1": {
                         "logo": {
-                            "src": "/logo/logo-black.png",
+                            "src": "/logo/logo-black.webp",
                             "alt": "Logo",
                             "width": 250,
                             "height": 250
@@ -203,7 +203,7 @@
                 "variants": {
                     "MoverNewFooter1": {
                         "logo": {
-                            "src": "/logo/logo-white.png",
+                            "src": "/logo/logo-white.webp",
                             "alt": "Logo",
                             "width": 250,
                             "height": 250
@@ -317,7 +317,7 @@
             "hero": {
                 "variants": {
                     "MoverNewHero1": {
-                        "bgImage": "/images/hero-banner.png",
+                        "bgImage": "/images/hero-banner.webp",
                         "subtitle": "Professional Care",
                         "titleLine1": "BEAUTY SALON",
                         "titleLine2": "FOR",
@@ -339,8 +339,8 @@
                 "variants": {
                     "MoverNewAbout1": {
                         "images": {
-                            "portrait": "/images/about-1.png",
-                            "salon": "/images/about-2.png"
+                            "portrait": "/images/about-1.webp",
+                            "salon": "/images/about-2.webp"
                         },
                         "subtitle": "About Us",
                         "titleLine1": "Enhancing Your",
@@ -399,7 +399,7 @@
                                 "subtitle": "on Beauty Treatments",
                                 "buttonText": "Get a Quote",
                                 "buttonHref": "/get-a-quote",
-                                "image": "/images/quote-model.png"
+                                "image": "/images/quote-model.webp"
                             }
                         },
                         "needHelpCard": {
@@ -431,9 +431,9 @@
                                     "Deeply hydrates and restores radiance",
                                     "Non-invasive with zero downtime"
                                 ],
-                                "bannerImg": "/images/service/service-glow-comparison.png",
-                                "mainImg": "/images/service/service-glow-comparison.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-glow-comparison.webp",
+                                "mainImg": "/images/service/service-glow-comparison.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -459,7 +459,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Using gentle micro-stimulation and deep peptide serum infusion, our treatment activates cellular repair, boosting natural collagen production and smoothing wrinkles.",
-                                    "image": "/images/service/service-how-it-works.png"
+                                    "image": "/images/service/service-how-it-works.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -470,7 +470,7 @@
                                         "Deeply hydrates and restores radiance",
                                         "Non-invasive with zero downtime"
                                     ],
-                                    "image": "/images/service/service-glow-comparison.png"
+                                    "image": "/images/service/service-glow-comparison.webp"
                                 }
                             },
                             {
@@ -492,9 +492,9 @@
                                     "Blow-dry and styling included",
                                     "Long-lasting, fade-resistant vibrance"
                                 ],
-                                "bannerImg": "/images/service/service-hair-styling.png",
-                                "mainImg": "/images/service/service-hair-styling.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-hair-styling.webp",
+                                "mainImg": "/images/service/service-hair-styling.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -520,7 +520,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Our stylists begin with a skin tone and hair strand consultation before precision mixing tailored shades with restorative bond-repair masks.",
-                                    "image": "/images/why-hair-wash.png"
+                                    "image": "/images/why-hair-wash.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -531,7 +531,7 @@
                                         "Blow-dry and styling included",
                                         "Long-lasting, fade-resistant vibrance"
                                     ],
-                                    "image": "/images/service/service-salon-interior.png"
+                                    "image": "/images/service/service-salon-interior.webp"
                                 }
                             },
                             {
@@ -553,9 +553,9 @@
                                     "Calms redness and inflammation",
                                     "Promotes soft, smooth skin texture"
                                 ],
-                                "bannerImg": "/images/gallery/gallery-2.png",
-                                "mainImg": "/images/gallery/gallery-2.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/gallery/gallery-2.webp",
+                                "mainImg": "/images/gallery/gallery-2.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -581,7 +581,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Through advanced hydra-dermabrasion and soothing cold-hammer therapy, dead cells are lifted and replaced with hyaluronic moisture.",
-                                    "image": "/images/service/service-how-it-works.png"
+                                    "image": "/images/service/service-how-it-works.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -592,7 +592,7 @@
                                         "Calms redness and inflammation",
                                         "Promotes soft, smooth skin texture"
                                     ],
-                                    "image": "/images/service/service-glow-comparison.png"
+                                    "image": "/images/service/service-glow-comparison.webp"
                                 }
                             },
                             {
@@ -614,9 +614,9 @@
                                     "Suitable for sensitive and acne-prone skin",
                                     "Luminous finish under all lighting"
                                 ],
-                                "bannerImg": "/images/why-makeup.png",
-                                "mainImg": "/images/why-makeup.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/why-makeup.webp",
+                                "mainImg": "/images/why-makeup.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -642,7 +642,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "We prep skin with hydrating primer serums, sculpt facial features with high-precision contouring, and lock in the look with micronized setting mist.",
-                                    "image": "/images/gallery/gallery-4.png"
+                                    "image": "/images/gallery/gallery-4.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -653,7 +653,7 @@
                                         "Suitable for sensitive and acne-prone skin",
                                         "Luminous finish under all lighting"
                                     ],
-                                    "image": "/images/service/service-salon-interior.png"
+                                    "image": "/images/service/service-salon-interior.webp"
                                 }
                             },
                             {
@@ -675,9 +675,9 @@
                                     "Enhances natural glow",
                                     "Quick and comfortable procedure"
                                 ],
-                                "bannerImg": "/images/service/service-bleaching-main.png",
-                                "mainImg": "/images/service/service-bleaching-main.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-bleaching-main.webp",
+                                "mainImg": "/images/service/service-bleaching-main.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -703,7 +703,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Our bleaching treatment is performed by trained professionals using skin-friendly products. The process helps remove facial hair, reduces tan and enhances your natural complexion, leaving your skin smooth, bright and refreshed.",
-                                    "image": "/images/service/service-how-it-works.png"
+                                    "image": "/images/service/service-how-it-works.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -714,7 +714,7 @@
                                         "Enhances natural glow",
                                         "Quick and comfortable procedure"
                                     ],
-                                    "image": "/images/service/service-glow-comparison.png"
+                                    "image": "/images/service/service-glow-comparison.webp"
                                 }
                             },
                             {
@@ -736,9 +736,9 @@
                                     "Leaves hair soft, manageable, and silky",
                                     "Resistant to high humidity and rain"
                                 ],
-                                "bannerImg": "/images/service/service-hair-styling.png",
-                                "mainImg": "/images/service/service-hair-styling.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-hair-styling.webp",
+                                "mainImg": "/images/service/service-hair-styling.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -764,7 +764,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "We infuse deep protein bonding formula into hair cuticles using controlled ceramic thermal sealing, restoring hair elasticity and silky straightness.",
-                                    "image": "/images/why-hair-wash.png"
+                                    "image": "/images/why-hair-wash.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -775,7 +775,7 @@
                                         "Leaves hair soft, manageable, and silky",
                                         "Resistant to high humidity and rain"
                                     ],
-                                    "image": "/images/service/service-salon-interior.png"
+                                    "image": "/images/service/service-salon-interior.webp"
                                 }
                             },
                             {
@@ -797,9 +797,9 @@
                                     "Chip-resistant long-wear gel polish",
                                     "Hygienic and sterilized tools"
                                 ],
-                                "bannerImg": "/images/gallery/gallery-5.png",
-                                "mainImg": "/images/gallery/gallery-5.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/gallery/gallery-5.webp",
+                                "mainImg": "/images/gallery/gallery-5.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -825,7 +825,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Your treatment includes nail shaping, cuticle conditioning, exfoliation, relaxing massage, and high-gloss gel curing under UV LED light.",
-                                    "image": "/images/gallery/gallery-5.png"
+                                    "image": "/images/gallery/gallery-5.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -836,7 +836,7 @@
                                         "Creative personalized artwork",
                                         "Complete relaxation experience"
                                     ],
-                                    "image": "/images/gallery/gallery-5.png"
+                                    "image": "/images/gallery/gallery-5.webp"
                                 }
                             },
                             {
@@ -858,9 +858,9 @@
                                     "Relieves muscle tension & stress",
                                     "Calm and tranquil spa atmosphere"
                                 ],
-                                "bannerImg": "/images/gallery/gallery-8.png",
-                                "mainImg": "/images/gallery/gallery-8.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/gallery/gallery-8.webp",
+                                "mainImg": "/images/gallery/gallery-8.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -886,7 +886,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Warm organic herbal oils are rhythmically applied using ancient Swedish and reflexology strokes in private, scented wellness suites.",
-                                    "image": "/images/gallery/gallery-8.png"
+                                    "image": "/images/gallery/gallery-8.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -897,7 +897,7 @@
                                         "Lowers stress hormones and elevates mood",
                                         "Promotes deep, restorative sleep"
                                     ],
-                                    "image": "/images/gallery/gallery-8.png"
+                                    "image": "/images/gallery/gallery-8.webp"
                                 }
                             }
                         ],
@@ -921,9 +921,9 @@
                                     "Deeply hydrates and restores radiance",
                                     "Non-invasive with zero downtime"
                                 ],
-                                "bannerImg": "/images/service/service-glow-comparison.png",
-                                "mainImg": "/images/service/service-glow-comparison.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-glow-comparison.webp",
+                                "mainImg": "/images/service/service-glow-comparison.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -949,7 +949,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Using gentle micro-stimulation and deep peptide serum infusion, our treatment activates cellular repair, boosting natural collagen production and smoothing wrinkles.",
-                                    "image": "/images/service/service-how-it-works.png"
+                                    "image": "/images/service/service-how-it-works.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -960,7 +960,7 @@
                                         "Deeply hydrates and restores radiance",
                                         "Non-invasive with zero downtime"
                                     ],
-                                    "image": "/images/service/service-glow-comparison.png"
+                                    "image": "/images/service/service-glow-comparison.webp"
                                 }
                             },
                             {
@@ -982,9 +982,9 @@
                                     "Blow-dry and styling included",
                                     "Long-lasting, fade-resistant vibrance"
                                 ],
-                                "bannerImg": "/images/service/service-hair-styling.png",
-                                "mainImg": "/images/service/service-hair-styling.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-hair-styling.webp",
+                                "mainImg": "/images/service/service-hair-styling.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -1010,7 +1010,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Our stylists begin with a skin tone and hair strand consultation before precision mixing tailored shades with restorative bond-repair masks.",
-                                    "image": "/images/why-hair-wash.png"
+                                    "image": "/images/why-hair-wash.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -1021,7 +1021,7 @@
                                         "Blow-dry and styling included",
                                         "Long-lasting, fade-resistant vibrance"
                                     ],
-                                    "image": "/images/service/service-salon-interior.png"
+                                    "image": "/images/service/service-salon-interior.webp"
                                 }
                             },
                             {
@@ -1043,9 +1043,9 @@
                                     "Calms redness and inflammation",
                                     "Promotes soft, smooth skin texture"
                                 ],
-                                "bannerImg": "/images/gallery/gallery-2.png",
-                                "mainImg": "/images/gallery/gallery-2.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/gallery/gallery-2.webp",
+                                "mainImg": "/images/gallery/gallery-2.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -1071,7 +1071,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Through advanced hydra-dermabrasion and soothing cold-hammer therapy, dead cells are lifted and replaced with hyaluronic moisture.",
-                                    "image": "/images/service/service-how-it-works.png"
+                                    "image": "/images/service/service-how-it-works.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -1082,7 +1082,7 @@
                                         "Calms redness and inflammation",
                                         "Promotes soft, smooth skin texture"
                                     ],
-                                    "image": "/images/service/service-glow-comparison.png"
+                                    "image": "/images/service/service-glow-comparison.webp"
                                 }
                             },
                             {
@@ -1104,9 +1104,9 @@
                                     "Suitable for sensitive and acne-prone skin",
                                     "Luminous finish under all lighting"
                                 ],
-                                "bannerImg": "/images/why-makeup.png",
-                                "mainImg": "/images/why-makeup.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/why-makeup.webp",
+                                "mainImg": "/images/why-makeup.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -1132,7 +1132,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "We prep skin with hydrating primer serums, sculpt facial features with high-precision contouring, and lock in the look with micronized setting mist.",
-                                    "image": "/images/gallery/gallery-4.png"
+                                    "image": "/images/gallery/gallery-4.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -1143,7 +1143,7 @@
                                         "Suitable for sensitive and acne-prone skin",
                                         "Luminous finish under all lighting"
                                     ],
-                                    "image": "/images/service/service-salon-interior.png"
+                                    "image": "/images/service/service-salon-interior.webp"
                                 }
                             },
                             {
@@ -1165,9 +1165,9 @@
                                     "Enhances natural glow",
                                     "Quick and comfortable procedure"
                                 ],
-                                "bannerImg": "/images/service/service-bleaching-main.png",
-                                "mainImg": "/images/service/service-bleaching-main.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-bleaching-main.webp",
+                                "mainImg": "/images/service/service-bleaching-main.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -1193,7 +1193,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Our bleaching treatment is performed by trained professionals using skin-friendly products. The process helps remove facial hair, reduces tan and enhances your natural complexion, leaving your skin smooth, bright and refreshed.",
-                                    "image": "/images/service/service-how-it-works.png"
+                                    "image": "/images/service/service-how-it-works.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -1204,7 +1204,7 @@
                                         "Enhances natural glow",
                                         "Quick and comfortable procedure"
                                     ],
-                                    "image": "/images/service/service-glow-comparison.png"
+                                    "image": "/images/service/service-glow-comparison.webp"
                                 }
                             },
                             {
@@ -1226,9 +1226,9 @@
                                     "Leaves hair soft, manageable, and silky",
                                     "Resistant to high humidity and rain"
                                 ],
-                                "bannerImg": "/images/service/service-hair-styling.png",
-                                "mainImg": "/images/service/service-hair-styling.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/service/service-hair-styling.webp",
+                                "mainImg": "/images/service/service-hair-styling.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -1254,7 +1254,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "We infuse deep protein bonding formula into hair cuticles using controlled ceramic thermal sealing, restoring hair elasticity and silky straightness.",
-                                    "image": "/images/why-hair-wash.png"
+                                    "image": "/images/why-hair-wash.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -1265,7 +1265,7 @@
                                         "Leaves hair soft, manageable, and silky",
                                         "Resistant to high humidity and rain"
                                     ],
-                                    "image": "/images/service/service-salon-interior.png"
+                                    "image": "/images/service/service-salon-interior.webp"
                                 }
                             },
                             {
@@ -1287,9 +1287,9 @@
                                     "Chip-resistant long-wear gel polish",
                                     "Hygienic and sterilized tools"
                                 ],
-                                "bannerImg": "/images/gallery/gallery-5.png",
-                                "mainImg": "/images/gallery/gallery-5.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/gallery/gallery-5.webp",
+                                "mainImg": "/images/gallery/gallery-5.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -1315,7 +1315,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Your treatment includes nail shaping, cuticle conditioning, exfoliation, relaxing massage, and high-gloss gel curing under UV LED light.",
-                                    "image": "/images/gallery/gallery-5.png"
+                                    "image": "/images/gallery/gallery-5.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -1326,7 +1326,7 @@
                                         "Creative personalized artwork",
                                         "Complete relaxation experience"
                                     ],
-                                    "image": "/images/gallery/gallery-5.png"
+                                    "image": "/images/gallery/gallery-5.webp"
                                 }
                             },
                             {
@@ -1348,9 +1348,9 @@
                                     "Relieves muscle tension & stress",
                                     "Calm and tranquil spa atmosphere"
                                 ],
-                                "bannerImg": "/images/gallery/gallery-8.png",
-                                "mainImg": "/images/gallery/gallery-8.png",
-                                "salonImg": "/images/service/service-salon-interior.png",
+                                "bannerImg": "/images/gallery/gallery-8.webp",
+                                "mainImg": "/images/gallery/gallery-8.webp",
+                                "salonImg": "/images/service/service-salon-interior.webp",
                                 "features": [
                                     {
                                         "icon": "Leaf",
@@ -1376,7 +1376,7 @@
                                 "howItWorks": {
                                     "title": "How It Works",
                                     "description": "Warm organic herbal oils are rhythmically applied using ancient Swedish and reflexology strokes in private, scented wellness suites.",
-                                    "image": "/images/gallery/gallery-8.png"
+                                    "image": "/images/gallery/gallery-8.webp"
                                 },
                                 "keyBenefits": {
                                     "title": "Key Benefits",
@@ -1387,7 +1387,7 @@
                                         "Lowers stress hormones and elevates mood",
                                         "Promotes deep, restorative sleep"
                                     ],
-                                    "image": "/images/gallery/gallery-8.png"
+                                    "image": "/images/gallery/gallery-8.webp"
                                 }
                             }
                         ]
@@ -1397,7 +1397,7 @@
             "cta": {
                 "variants": {
                     "MoverNewCta1": {
-                        "bgImage": "/images/hero-banner.png",
+                        "bgImage": "/images/hero-banner.webp",
                         "subtitle": "Book Your Appointment",
                         "titleLine1": "Let Your Beauty",
                         "titleHighlight": "Shine Brighter",
@@ -1422,7 +1422,7 @@
                                 "name": "Ariana Mehta",
                                 "role": "HAIR STYLIST",
                                 "bio": "Specializes in haircuts, styling and trendy looks tailored to your personality.",
-                                "image": "/images/team/hair-stylist.png",
+                                "image": "/images/team/hair-stylist.webp",
                                 "socials": {
                                     "facebook": "https://facebook.com",
                                     "instagram": "https://instagram.com",
@@ -1434,7 +1434,7 @@
                                 "name": "Neha Kapoor",
                                 "role": "MAKEUP ARTIST",
                                 "bio": "Expert in bridal, party and professional makeup with a flawless finish.",
-                                "image": "/images/team/makeup-artist.png",
+                                "image": "/images/team/makeup-artist.webp",
                                 "socials": {
                                     "facebook": "https://facebook.com",
                                     "instagram": "https://instagram.com",
@@ -1446,7 +1446,7 @@
                                 "name": "Priya Sharma",
                                 "role": "NAIL SPECIALIST",
                                 "bio": "Provides nail care, extensions and creative nail art for every occasion.",
-                                "image": "/images/team/nail-specialist.png",
+                                "image": "/images/team/nail-specialist.webp",
                                 "socials": {
                                     "facebook": "https://facebook.com",
                                     "instagram": "https://instagram.com",
@@ -1458,7 +1458,7 @@
                                 "name": "Kavya Singh",
                                 "role": "SKIN CARE SPECIALIST",
                                 "bio": "Focuses on advanced skin treatments for healthy and glowing skin.",
-                                "image": "/images/team/skin-specialist.png",
+                                "image": "/images/team/skin-specialist.webp",
                                 "socials": {
                                     "facebook": "https://facebook.com",
                                     "instagram": "https://instagram.com",
@@ -1481,11 +1481,11 @@
                             "href": "/services"
                         },
                         "card2": {
-                            "image": "/images/why-hair-wash.png",
+                            "image": "/images/why-hair-wash.webp",
                             "alt": "Hair Washing and Care"
                         },
                         "card3": {
-                            "image": "/images/why-makeup.png",
+                            "image": "/images/why-makeup.webp",
                             "alt": "Professional Makeup Service"
                         },
                         "card4": {
@@ -1523,7 +1523,7 @@
                                 "id": 1,
                                 "name": "Ritika Sharma",
                                 "role": "REGULAR CLIENT",
-                                "image": "/images/testimonial/client-1.png",
+                                "image": "/images/testimonial/client-1.webp",
                                 "quote": "Absolutely love the services here! The staff is professional, friendly and truly what suits you best. My hair and skin have never looked better.",
                                 "rating": 5
                             },
@@ -1531,7 +1531,7 @@
                                 "id": 2,
                                 "name": "Sneha Verma",
                                 "role": "HAPPY CLIENT",
-                                "image": "/images/testimonial/client-2.png",
+                                "image": "/images/testimonial/client-2.webp",
                                 "quote": "Highly recommended! The ambience is so relaxing and the team is very skilled. From haircuts to facials, every service is top-notch.",
                                 "rating": 5
                             },
@@ -1539,7 +1539,7 @@
                                 "id": 3,
                                 "name": "Ayesha Khan",
                                 "role": "SATISFIED CLIENT",
-                                "image": "/images/testimonial/client-3.png",
+                                "image": "/images/testimonial/client-3.webp",
                                 "quote": "I had an amazing experience! The team took great care and gave me exactly the look I wanted. The results were beyond my expectations.",
                                 "rating": 5
                             },
@@ -1547,7 +1547,7 @@
                                 "id": 4,
                                 "name": "Pooja Patel",
                                 "role": "VIP CLIENT",
-                                "image": "/images/testimonial/client-1.png",
+                                "image": "/images/testimonial/client-1.webp",
                                 "quote": "The bridal package was beyond perfect! They made my big day extra special makeup and hair styling. Thank you team MoverNew!",
                                 "rating": 5
                             }
@@ -1584,7 +1584,7 @@
                                 "description": "Experience expert care and premium treatments for a more beautiful you.",
                                 "buttonText": "Book Now",
                                 "buttonHref": "/get-a-quote",
-                                "image": "/images/quote-model.png"
+                                "image": "/images/quote-model.webp"
                             },
                             "categoriesTitle": "Categories",
                             "categories": [
@@ -1638,39 +1638,39 @@
                                 "subCategory": "Hair Care Routine",
                                 "title": "10 Simple Hair Care Tips for Healthy & Shiny Hair",
                                 "excerpt": "Discover expert tips to keep your hair and more beautyfull strong, shiny and beautiful every day.",
-                                "image": "/images/blog/blog-1.png",
-                                "bannerImage": "/images/blog/blog-1.png",
+                                "image": "/images/blog/blog-1.webp",
+                                "bannerImage": "/images/blog/blog-1.webp",
                                 "intro": "Healthy, shiny hair is not just about good looks — it's a reflection of proper care, the right routine and healthy lifestyle choices. With so many products and treatments available today, it can be confusing to know what really works. In this guide, we're sharing expert hair care tips that are simple, effective and easy to follow, so you can keep your hair strong, smooth and beautiful every day.",
                                 "sections": [
                                     {
                                         "step": "1",
                                         "title": "Use Right Shampoo for Your Hair Type",
                                         "content": "Choosing the right shampoo is the foundational step towards radiant, healthy hair. If your hair is dry and brittle, select a deeply hydrating, moisture-locking formula enriched with natural oils like argan or jojoba. For oily roots, a clarifying yet gentle cleanser helps balance scalp sebum without stripping essential hydration. Always insist on sulfate-free and paraben-free formulations to preserve your hair's protective lipid barrier and natural shine.",
-                                        "image": "/images/why-hair-wash.png"
+                                        "image": "/images/why-hair-wash.webp"
                                     },
                                     {
                                         "step": "2",
                                         "title": "Don't Skip Conditioning",
                                         "content": "Conditioning is non-negotiable for smoothing down open hair cuticles and preventing dehydration. A premium conditioner infuses essential amino acids and lipids, reducing frizzy flyaways and making strands noticeably silky and tangle-free. Concentrate application from mid-lengths down to the ends where damage accumulates, leaving it on for 3 to 5 minutes before rinsing with cool water to seal maximum moisture into each strand.",
-                                        "image": "/images/service/service-hair-styling.png"
+                                        "image": "/images/service/service-hair-styling.webp"
                                     },
                                     {
                                         "step": "3",
                                         "title": "Protect Your Hair from Heat",
                                         "content": "Frequent exposure to thermal styling tools—such as blow dryers, curling wands, and flat irons—can weaken the hair's internal keratin structure and lead to severe split ends. Always mist a lightweight heat protectant spray evenly across damp or dry sections before applying heat, and keep your tool temperature below 350°F (180°C) to prevent irreversible thermal damage and moisture depletion.",
-                                        "image": "/images/gallery/gallery-1.png"
+                                        "image": "/images/gallery/gallery-1.webp"
                                     },
                                     {
                                         "step": "4",
                                         "title": "Maintain a Healthy Diet",
                                         "content": "True hair vitality starts from within. Hair follicles require a continuous supply of vital nutrients, including biotin, zinc, iron, and omega-3 fatty acids, to produce resilient strands. Incorporate nutrient-dense foods like eggs, wild salmon, walnuts, chia seeds, and leafy greens into your daily meals. Staying thoroughly hydrated throughout the day also fuels cellular renewal and prevents hair from becoming dull and brittle.",
-                                        "image": "/images/gallery/gallery-2.png"
+                                        "image": "/images/gallery/gallery-2.webp"
                                     },
                                     {
                                         "step": "5",
                                         "title": "Get Regular Trims",
                                         "content": "Scheduling a professional trim every 6 to 8 weeks is essential for halting split ends in their tracks before they travel up the hair shaft. Regular maintenance preserves the clean shape of your haircut, stimulates healthy-looking movement, and ensures your ends always feel thick, fresh, and touchably soft.",
-                                        "image": "/images/service/service-salon-interior.png"
+                                        "image": "/images/service/service-salon-interior.webp"
                                     }
                                 ],
                                 "quote": "Beautiful hair starts with the right care, a healthy lifestyle and a little consistency. Follow these simple tips and enjoy stronger, shinier and more confident hair every day."
@@ -1687,39 +1687,39 @@
                                 "subCategory": "Product Guide",
                                 "title": "How to Choose the Right Shampoo Your Hair Type",
                                 "excerpt": "Find the perfect shampoo for your hair type and keep your hair healthy, fresh and nourished.",
-                                "image": "/images/blog/blog-2.png",
-                                "bannerImage": "/images/blog/blog-2.png",
+                                "image": "/images/blog/blog-2.webp",
+                                "bannerImage": "/images/blog/blog-2.webp",
                                 "intro": "Not all shampoos are created equal. Finding the right formulation for your scalp and strand structure can transform your daily hair routine from frustrating to fabulous. Here is our master stylist guide to selecting the perfect shampoo for your unique needs.",
                                 "sections": [
                                     {
                                         "step": "1",
                                         "title": "Identify Your Scalp Condition",
                                         "content": "Your scalp is an extension of your facial skin, and its micro-environment directly determines strand vitality. Examine your roots carefully: if your roots become greasy within 24 hours, you have an oily scalp requiring gentle balancing agents like tea tree or salicylic acid. If your scalp feels tight or flaky, opt for soothing, moisture-replenishing ingredients like aloe vera and oat extract.",
-                                        "image": "/images/why-hair-wash.png"
+                                        "image": "/images/why-hair-wash.webp"
                                     },
                                     {
                                         "step": "2",
                                         "title": "Avoid Harsh Sulfates and Parabens",
                                         "content": "Standard sulfates like SLS and SLES create aggressive lather that strips away your hair's natural sebum, leading to overproduction of oil, faded color, and irritated scalp tissue. Switching to plant-derived surfactants like coco-glucoside delivers a gentle, luxurious cleanse that leaves your cuticle intact and restores natural equilibrium.",
-                                        "image": "/images/service/service-hair-styling.png"
+                                        "image": "/images/service/service-hair-styling.webp"
                                     },
                                     {
                                         "step": "3",
                                         "title": "Tailor Formula to Hair Texture",
                                         "content": "The thickness and pattern of your individual strands demand targeted ingredients. Fine, limp hair thrives on lightweight polymer-infused volumizing shampoos that lift roots without heavy residue. In contrast, coarse, curly, or chemically-treated hair requires rich botanical butters, hydrolyzed silk, and ceramides to soften stiffness and boost definition.",
-                                        "image": "/images/gallery/gallery-3.png"
+                                        "image": "/images/gallery/gallery-3.webp"
                                     },
                                     {
                                         "step": "4",
                                         "title": "Clarify Weekly for Buildup Removal",
                                         "content": "Over time, styling clays, dry shampoos, silicones, and hard water minerals accumulate on both the scalp and hair shafts, creating a dull coating that prevents moisture absorption. Integrating a detoxifying clarifying shampoo once a week purifies the follicles and reboots hair texture, restoring natural bounce and high-wattage shine.",
-                                        "image": "/images/gallery/gallery-4.png"
+                                        "image": "/images/gallery/gallery-4.webp"
                                     },
                                     {
                                         "step": "5",
                                         "title": "Balance with Color-Safe Formulations",
                                         "content": "If you color or bleach your hair, always choose acidic pH-balanced shampoos designed to seal cuticle layers. Color-treated and highlighted hair has a lifted cuticle that is vulnerable to pigment wash-out and environmental oxidation. Formulations with UV filters and antioxidant polyphenols preserve your salon-fresh color vibrancy for weeks longer.",
-                                        "image": "/images/service/service-salon-interior.png"
+                                        "image": "/images/service/service-salon-interior.webp"
                                     }
                                 ],
                                 "quote": "Your scalp is skin too — treat it with the same gentle, targeted care you give your face, and your hair will naturally flourish."
@@ -1736,39 +1736,39 @@
                                 "subCategory": "Trends & Inspiration",
                                 "title": "Top Hair Styling Trends You Should Try This Season",
                                 "excerpt": "From sleek looks to soft waves, explore the latest hair styling trends for a fresh and modern look.",
-                                "image": "/images/blog/blog-3.png",
-                                "bannerImage": "/images/blog/blog-3.png",
+                                "image": "/images/blog/blog-3.webp",
+                                "bannerImage": "/images/blog/blog-3.webp",
                                 "intro": "From effortless butterfly layers to sleek glassy bobs, this season brings an exciting revival of modern, versatile silhouettes. Discover the top runway and red-carpet inspired hair trends that our stylists are crafting for clients.",
                                 "sections": [
                                     {
                                         "step": "1",
                                         "title": "The 90s Fluffy Blowout",
                                         "content": "Voluminous, airy bounces with soft curved ends are dominating salon requests everywhere. Combining large ceramic round brushes with lightweight root-lifting mousse creates a bouncy, timeless silhouette full of dynamic movement that feels modern yet vintage-inspired.",
-                                        "image": "/images/service/service-hair-styling.png"
+                                        "image": "/images/service/service-hair-styling.webp"
                                     },
                                     {
                                         "step": "2",
                                         "title": "Wispy Curtain Bangs & Face Framing",
                                         "content": "Curtain bangs remain the most flattering, low-commitment hair trend of the year. Cut to accentuate your cheekbones and jawline, these soft, feathered layers blend seamlessly into longer lengths and grow out gracefully without awkward transition phases.",
-                                        "image": "/images/why-hair-wash.png"
+                                        "image": "/images/why-hair-wash.webp"
                                     },
                                     {
                                         "step": "3",
                                         "title": "Rich Honey Caramel Balayage",
                                         "content": "Sun-kissed warmth is taking center stage with hand-painted caramel and golden honey balayage. This dimensional coloring technique mimics the natural play of sunlight through hair, offering rich depth and a gentle grow-out with minimal root maintenance.",
-                                        "image": "/images/gallery/gallery-6.png"
+                                        "image": "/images/gallery/gallery-6.webp"
                                     },
                                     {
                                         "step": "4",
                                         "title": "Wet-Look Glass Buns",
                                         "content": "The ultra-sleek, glass-finish chignon delivers an instant runway-ready aesthetic. Prepared with nourishing hair oil and flexible gel, this polished style locks hair into a mirror-like sheen that transitions effortlessly from corporate meetings to formal evening events.",
-                                        "image": "/images/gallery/gallery-7.png"
+                                        "image": "/images/gallery/gallery-7.webp"
                                     },
                                     {
                                         "step": "5",
                                         "title": "Texturized Shags with Soft Layers",
                                         "content": "The contemporary shag is all about celebrating your natural wave and tactile texture. Razor-cut layers and internal debulking create an effortlessly lived-in shape that air-dries into perfection with just a spritz of sea salt or texturizing spray.",
-                                        "image": "/images/service/service-salon-interior.png"
+                                        "image": "/images/service/service-salon-interior.webp"
                                     }
                                 ],
                                 "quote": "The best hairstyle is one that reflects your inner personality and makes you walk out the door feeling unstoppable."
@@ -1785,39 +1785,39 @@
                                 "subCategory": "Salon Therapies",
                                 "title": "Facial Treatments: Benefits and What to Expect",
                                 "excerpt": "Learn about the amazing benefits of facials and how they can help you achieve glowing, healthier skin.",
-                                "image": "/images/blog/blog-4.png",
-                                "bannerImage": "/images/blog/blog-4.png",
+                                "image": "/images/blog/blog-4.webp",
+                                "bannerImage": "/images/blog/blog-4.webp",
                                 "intro": "Professional facials go far beyond everyday home skincare routines. By combining deep clinical extraction, professional-grade exfoliation, and targeted serum infusion, regular treatments dramatically improve cellular renewal and complexion radiance.",
                                 "sections": [
                                     {
                                         "step": "1",
                                         "title": "Thorough Skin Analysis by a Certified Aesthetician",
                                         "content": "Every successful facial journey begins with a meticulous clinical skin diagnostic under magnification. Your aesthetician examines hydration levels, lipid balance, sensitivity triggers, and pore congestion to curate a bespoke treatment protocol tailored specifically to your skin profile.",
-                                        "image": "/images/gallery/gallery-2.png"
+                                        "image": "/images/gallery/gallery-2.webp"
                                     },
                                     {
                                         "step": "2",
                                         "title": "Deep Pore Cleansing and Gentle Exfoliation",
                                         "content": "Using medical-grade enzymatic peels and ultrasonic exfoliation, dead cellular buildup and stubborn sebum are gently lifted from the epidermis. This critical clearing phase uncovers fresh, receptive skin cells and immediately smooths textural irregularities.",
-                                        "image": "/images/service/service-bleaching-main.png"
+                                        "image": "/images/service/service-bleaching-main.webp"
                                     },
                                     {
                                         "step": "3",
                                         "title": "Custom Nutrient and Hydration Infusion",
                                         "content": "Targeted active serums containing pure hyaluronic acid, niacinamide, and bioactive peptides are delivered deep into the dermal matrix using advanced infusion technology. This replenishes moisture reserves, plumps fine dehydration lines, and restores youthful bounce.",
-                                        "image": "/images/service/service-glow-comparison.png"
+                                        "image": "/images/service/service-glow-comparison.webp"
                                     },
                                     {
                                         "step": "4",
                                         "title": "Lymphatic Drainage Facial Massage",
                                         "content": "Rhythmic, contouring massage strokes follow natural lymphatic channels to reduce puffiness, drain fluid retention, and stimulate micro-circulation. The increased oxygen flow revitalizes dull complexions while naturally lifting and defining facial contours.",
-                                        "image": "/images/why-makeup.png"
+                                        "image": "/images/why-makeup.webp"
                                     },
                                     {
                                         "step": "5",
                                         "title": "Protective Barrier Finishing and Sun Shield",
                                         "content": "The treatment concludes with a barrier-fortifying blend of soothing ceramides, antioxidant vitamin complexes, and broad-spectrum mineral SPF. This protective shield safeguards freshly renewed skin from environmental stressors and locks in that unmistakable, post-facial salon glow.",
-                                        "image": "/images/service/service-salon-interior.png"
+                                        "image": "/images/service/service-salon-interior.webp"
                                     }
                                 ],
                                 "quote": "Investing in your skin is an act of self-care with compounding rewards — glow with radiant vitality all year round."
@@ -1832,7 +1832,7 @@
                         "defaultTitle": "CONTACT US",
                         "defaultBreadcrumbHome": "Home",
                         "defaultBreadcrumbCurrent": "Contact Us",
-                        "bgImage": "/images/top-banner.jpg"
+                        "bgImage": "/images/top-banner.webp"
                     }
                 }
             },
@@ -1886,7 +1886,7 @@
                         ],
                         "submitButtonText": "Get a Quote",
                         "showcaseCard": {
-                            "image": "/images/quote-model.png",
+                            "image": "/images/quote-model.webp",
                             "subtitle": "Why Request A Quote",
                             "title": "Tailored Beauty \nSolutions for You",
                             "features": [
@@ -1954,73 +1954,73 @@
                                 "id": 1,
                                 "title": "Bridal Updo Hairstyle",
                                 "category": "Hair Care",
-                                "image": "/images/gallery/gallery-1.png"
+                                "image": "/images/gallery/gallery-1.webp"
                             },
                             {
                                 "id": 2,
                                 "title": "Hydrating Facial Treatment",
                                 "category": "Facial",
-                                "image": "/images/gallery/gallery-2.png"
+                                "image": "/images/gallery/gallery-2.webp"
                             },
                             {
                                 "id": 3,
                                 "title": "Luxury Salon Interior",
                                 "category": "Salon Interior",
-                                "image": "/images/gallery/gallery-3.png"
+                                "image": "/images/gallery/gallery-3.webp"
                             },
                             {
                                 "id": 4,
                                 "title": "Precision Eye Makeup",
                                 "category": "Makeup",
-                                "image": "/images/gallery/gallery-4.png"
+                                "image": "/images/gallery/gallery-4.webp"
                             },
                             {
                                 "id": 5,
                                 "title": "Nail Care & Manicure",
                                 "category": "Nails",
-                                "image": "/images/gallery/gallery-5.png"
+                                "image": "/images/gallery/gallery-5.webp"
                             },
                             {
                                 "id": 6,
                                 "title": "Hair Curling & Styling",
                                 "category": "Hair Care",
-                                "image": "/images/gallery/gallery-6.png"
+                                "image": "/images/gallery/gallery-6.webp"
                             },
                             {
                                 "id": 7,
                                 "title": "Relaxing Hair Wash Therapy",
                                 "category": "Hair Care",
-                                "image": "/images/gallery/gallery-7.png"
+                                "image": "/images/gallery/gallery-7.webp"
                             },
                             {
                                 "id": 8,
                                 "title": "Rejuvenating Face Spa Massage",
                                 "category": "Facial",
-                                "image": "/images/gallery/gallery-8.png"
+                                "image": "/images/gallery/gallery-8.webp"
                             },
                             {
                                 "id": 9,
                                 "title": "Professional Makeup Tools",
                                 "category": "Makeup",
-                                "image": "/images/gallery/gallery-9.png"
+                                "image": "/images/gallery/gallery-9.webp"
                             },
                             {
                                 "id": 10,
                                 "title": "Glossy Wave Hairstyle",
                                 "category": "Hair Care",
-                                "image": "/images/gallery/gallery-10.png"
+                                "image": "/images/gallery/gallery-10.webp"
                             },
                             {
                                 "id": 11,
                                 "title": "Hair Highlighting & Colouring",
                                 "category": "Hair Care",
-                                "image": "/images/gallery/gallery-11.png"
+                                "image": "/images/gallery/gallery-11.webp"
                             },
                             {
                                 "id": 12,
                                 "title": "Brunette Beach Waves",
                                 "category": "Hair Care",
-                                "image": "/images/gallery/gallery-12.png"
+                                "image": "/images/gallery/gallery-12.webp"
                             }
                         ]
                     }
@@ -2084,7 +2084,7 @@
                             "subtitle": "Visit Our Salon",
                             "title": "Experience Beauty in Person",
                             "description": "Step into our salon and enjoy a relaxing, rejuvenating and luxurious experience with our expert team.",
-                            "image": "/images/salon-interior-contact.png"
+                            "image": "/images/salon-interior-contact.webp"
                         },
                         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d149561.7135517701!2d-118.18256653462869!3d34.07263686826212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1791453615761!5m2!1sen!2sin"
                     }
