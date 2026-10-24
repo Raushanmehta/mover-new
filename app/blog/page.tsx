@@ -1,11 +1,11 @@
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import BlogSection from "@/sections/home/BlogSection";
 import site from "@/data/index";
 
 export default function BlogPage() {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title="Blog"
                 breadcrumbHome="Home"
                 breadcrumbCurrent="Blog"

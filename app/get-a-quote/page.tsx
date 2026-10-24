@@ -1,11 +1,11 @@
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import GetAQuoteSection from "@/sections/GetAQuoteSection";
 import site from "@/data/index";
 
 export default function GetAQuotePage() {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title="Get A Quote"
                 breadcrumbHome="Home"
                 breadcrumbCurrent="Get A Quote"

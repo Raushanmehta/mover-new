@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import ThankYouSection from "@/sections/ThankYouSection";
 import site from "@/data/index";
 
@@ -13,7 +13,7 @@ export default function ThankyouPage() {
 
   return (
     <main>
-      <PageTopSection
+      <Breadcrumb
         title={data.pageTop.title}
         breadcrumbCurrent={data.pageTop.breadcrumbCurrent}
       />

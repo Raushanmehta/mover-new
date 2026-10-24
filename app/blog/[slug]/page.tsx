@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import BlogDetailSection from "@/sections/BlogDetailSection";
 import { siteMap } from "@/data";
 
@@ -22,7 +22,7 @@ async function BlogContent({ params }: BlogDetailPageProps) {
 export default function BlogDetailPage({ params }: BlogDetailPageProps) {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title={"Blog Detail"}
                 breadcrumbCurrent={"Blog Detail"}
                 breadcrumbHome="Home"

@@ -1,4 +1,4 @@
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import CtaSection from "@/sections/home/CtaSection";
 import ServiceSection from "@/sections/home/ServiceSection";
 import site from "@/data/index";
@@ -6,7 +6,7 @@ import site from "@/data/index";
 export default function ServicePage() {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title="Services"
                 breadcrumbHome="Home"
                 breadcrumbCurrent="Services"

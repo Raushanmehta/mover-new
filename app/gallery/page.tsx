@@ -1,11 +1,11 @@
 import GallerySection from "@/sections/GallerySection";
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import site from "@/data/index";
 
 export default function GalleryPage() {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title="Gallery"
                 breadcrumbHome="Home"
                 breadcrumbCurrent="Gallery"

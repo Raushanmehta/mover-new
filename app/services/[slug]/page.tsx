@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import ServiceDetailSection from "@/sections/ServiceDetailSection";
 import { siteMap } from "@/data";
 
@@ -22,7 +22,7 @@ async function ServiceDetailContent({ params }: ServiceDetailPageProps) {
 export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title={"Service Detail"}
                 breadcrumbCurrent={"Service Detail"}
                 breadcrumbHome="Home"

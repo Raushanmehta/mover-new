@@ -1,11 +1,11 @@
 import ContactSection from "@/sections/ContactSection";
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import site from "@/data/index";
 
 export default function ContactPage() {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title="Contact Us"
                 breadcrumbHome="Home"
                 breadcrumbCurrent="Contact Us"

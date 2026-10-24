@@ -1,4 +1,4 @@
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import AboutSection from "@/sections/home/AboutSection";
 import CtaSection from "@/sections/home/CtaSection";
 import WhyChooseUsSection from "@/sections/home/WhyChooseUsSection";
@@ -7,7 +7,7 @@ import site from "@/data/index";
 export default function AboutPage() {
     return (
         <main>
-            <PageTopSection
+            <Breadcrumb
                 title="About Us"
                 breadcrumbHome="Home"
                 breadcrumbCurrent="About Us"

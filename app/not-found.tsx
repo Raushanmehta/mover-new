@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaCompass, FaHome, FaTruck, FaArrowRight } from "react-icons/fa";
-import PageTopSection from "@/components/common/PageTopSection";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import site from "@/data/index";
 
 export default function NotFound() {
@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <main>
       {/* Top */}
-      <PageTopSection
+      <Breadcrumb
         title={pageTop.title}
         breadcrumbCurrent={pageTop.breadcrumbCurrent}
       />

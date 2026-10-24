@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import site from "@/data/index";
 
-interface PageTopSectionProps {
+interface BreadcrumbProps {
     title?: string;
     breadcrumbHome?: string;
     breadcrumbCurrent?: string;
@@ -13,13 +13,13 @@ interface PageTopSectionProps {
     data?: typeof site.pageTopSection;
 }
 
-export default function PageTopSection({
+export default function Breadcrumb({
     title,
     breadcrumbHome,
     breadcrumbCurrent,
     bgImage,
     data: propData,
-}: PageTopSectionProps = {}) {
+}: BreadcrumbProps = {}) {
     const data = propData || site.pageTopSection;
     const finalTitle = title || data.defaultTitle;
     const finalHome = breadcrumbHome || data.defaultBreadcrumbHome;
